@@ -1,8 +1,7 @@
 var carSpeed = 0;
 let color = 0;
 let posSyncIndex = 0;
-let ghostPos = [0,0,0]
-let simulationSpeed = 1
+let ghostPos
 (() => {
     var e = {
             23: (e, t, i) => {
@@ -18392,7 +18391,7 @@ let simulationSpeed = 1
                 .length; ++e)
                 hp(this, sp, "f")[e](1 / hp(this, rp, "f"));
             hp(this, qf, "f")
-                .stepSimulation(simulationSpeed/uh(this,ah,"f"), 0, simulationSpeed/uh(this,ah,"f")), cp(this, np, (e = hp(this, np, "f"), ++e), "f");
+                .stepSimulation(1 / hp(this, rp, "f"), 0, 1 / hp(this, rp, "f")), cp(this, np, (e = hp(this, np, "f"), ++e), "f");
             for (let e = 0; e < hp(this, ap, "f")
                 .length; ++e)
                 hp(this, ap, "f")[e](1 / hp(this, rp, "f"))
@@ -24114,7 +24113,7 @@ let simulationSpeed = 1
                     isCheckpoint: !1
                 }), Ob(this, Fx, new E_(Fb(this, Lx, "f"), Fb(this, xx, "f"), (() => {
                     Fb(this, yx, "f")
-                        .playUIClick(), Ob(this, wx, Fb(this, wx, "a", kb) + 1, "a", Rb)
+                        .playUIClick(), Ob(this, wx, Fb(this, wx, "a", kb) + 1000000000000000, "a", Rb)
                 }), (() => {
                     Fb(this, yx, "f")
                         .playUIClick(), Ob(this, wx, Math.max(0, Fb(this, wx, "a", kb) - 1), "a", Rb)
