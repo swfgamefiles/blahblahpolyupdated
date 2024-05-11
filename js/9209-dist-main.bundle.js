@@ -1,8 +1,8 @@
 var carSpeed = 0;
 let color = 0;
 let posSyncIndex = 0;
-let ghostPos
-let simulationSpeed = 2
+let ghostPos;
+let simulationSpeed = 2;
 (() => {
     var e = {
             23: (e, t, i) => {
