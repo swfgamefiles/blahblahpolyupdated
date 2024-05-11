@@ -12871,6 +12871,7 @@
              r = !1,
              a = !1,
              s = !1;
+         console.log(e.getControls(tu(this, Lh, "f").currentFrame))
           if (!tu(this, kh, "f") && tu(this, zh, "f") && (({
                 up: i,
                 right: r,
