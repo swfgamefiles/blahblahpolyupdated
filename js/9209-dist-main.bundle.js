@@ -25315,6 +25315,7 @@ let simulationSpeed = 2;
                     .setAnimationLoop(e)
             }
             get scene() {
+                console.log(rS(this, QM, "f"))
                 return rS(this, QM, "f")
             }
         };
