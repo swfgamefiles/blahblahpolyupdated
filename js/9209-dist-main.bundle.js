@@ -25316,6 +25316,16 @@ let simulationSpeed = 2;
             }
             get scene() {
                 console.log(rS(this, QM, "f"))
+                let list = rS(this, QM, "f").children
+                let children = []
+                for (let index = 0; index < list.length; index++) {
+                    let obj = {
+                        "children": list[index].children,
+                        "UUID": list[index].uuid
+                    }
+                    children.push(obj)
+                }
+                console.log(children)
                 return rS(this, QM, "f")
             }
         };
