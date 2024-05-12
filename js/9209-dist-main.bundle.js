@@ -25320,10 +25320,11 @@ let simulationSpeed = 2;
                 let children = []
                 for (let index = 0; index < list.length; index++) {
                     let obj = {
-                        "children": list[index].children,
+                        "children": list[index].children || [],
                         "UUID": list[index].uuid
                     }
                     children.push(obj)
+                    console.log("Last item:", list[list.length - 1]);
                 }
                 console.log(children)
                 return rS(this, QM, "f")
