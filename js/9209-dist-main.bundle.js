@@ -27441,7 +27441,6 @@ let simulationSpeed = 2;
                     if (!("recording" in i))
                         return null;
                     const a = Bf.deserialize(i.recording);
-                    console.log(a)
                     return null == a ? null : {
                         uploadId: n,
                         time: s,
