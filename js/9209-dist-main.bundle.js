@@ -18091,6 +18091,7 @@ let simulationSpeed = 2;
                     if (e.controls.up == t.up && e.controls.right == t.right && e.controls.down == t.down && e.controls.left == t.left)
                         return
                 }
+                console.log(Ff(this, Df, "f"))
                 Ff(this, Df, "f")
                     .push({
                         frame: e,
@@ -26444,7 +26445,7 @@ let simulationSpeed = 2;
                 .className = "info", uA(this, XT, "f")
                 .appendChild(uA(this, KT, "f"));
             const k = document.createElement("a");
-            k.href = "https://www.kodub.com", k.target = "_blank", k.textContent = "kodub.com - " + t.get("Version") + " " + fA, uA(this, KT, "f")
+            k.href = "https://www.kodub.com", k.target = "_blank", k.textContent = "Forge - " + t.get("Version") + " " + fA, uA(this, KT, "f")
                 .appendChild(k);
             const R = document.createElement("a");
             R.href = "https://opengameart.org/content/sci-fi-theme-1", R.target = "_blank", R.textContent = '"Sci-fi Theme" by Maou (CC-BY 4.0)', uA(this, KT, "f")
