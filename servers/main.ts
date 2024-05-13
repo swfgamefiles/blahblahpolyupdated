@@ -2,7 +2,7 @@
 function getClientHtml(domain) {
   return `<html>
     <body>
-      <h1>WebSocket Example</h1>
+      <h1>WebSocket Example v2</h1>
       <pre id="pongs"></pre>
 
       <script>
