@@ -25034,7 +25034,7 @@ let simulationSpeed = 2;
                         }), jM(this, PM, new wE(XM(this, _M, "f"), t, i, r), "f")
                 })), XM(this, LM, "f")
                 .setColors(e), XM(this, bM, "f")
-                .setCamera(XM(this, NM, "f")
+                .setCamera(XM(this, LM, "f")
                     .cameraOrbit), XM(this, zM, "f")
                 .disable(), null === (t = XM(this, PM, "f")) || void 0 === t || t.dispose(), jM(this, PM, null, "f")
         }, WM = function () {
