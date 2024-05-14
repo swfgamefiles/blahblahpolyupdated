@@ -19674,7 +19674,7 @@ let simulationSpeed = 2;
             get cameraCockpit() {
                 let val = Ug(this, eg, "f")
                 .camera
-                console.log("Camera cockpit value"+val)
+                console.log(`Camera cockpit value${val}`)
        
                 return val
             }
