@@ -25119,7 +25119,7 @@ let simulationSpeed = 2;
                                 .camera)) : null != XM(this, LM, "f") && (null != XM(this, LM, "f") && (XM(this, LM, "f")
                                 .audioVolume = 1), null != XM(this, NM, "f") && (XM(this, NM, "f")
                                 .audioVolume = .5), jM(this, CM, new Jb(n, c), "f"), jM(this, kM, new aE(c), "f"), jM(this, RM, new Y_(n, null === (i = XM(this, UM, "f")) || void 0 === i ? void 0 : i.name), "f"), XM(this, gM, "m", GM)
-                            .call(this), r.show(XM(this, vM, "f")), s.setCamera(XM(this, LM, "f")
+                            .call(this), r.show(XM(this, vM, "f")), s.setCamera(XM(this, NM, "f")
                                 .cameraOrbit))
                     })), XM(this, gM, "m", BM)
                     .call(this, o.carColors), XM(this, gM, "m", HM)
