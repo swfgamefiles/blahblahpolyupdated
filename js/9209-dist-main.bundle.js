@@ -25324,7 +25324,6 @@ let simulationSpeed = 2;
                         "UUID": list[index].uuid
                     }
                     children.push(obj)
-                    console.log("Last item:", list[list.length - 1]);
                 }
                 console.log(children)
                 return rS(this, QM, "f")
