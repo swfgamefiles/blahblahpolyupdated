@@ -25077,6 +25077,10 @@ let simulationSpeed = 2;
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
+                console.log(e.getPosition())
+            }
+            if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
+                const e = XM(this, NM, "f")
                     .getPosition()
                     .distanceTo(XM(this, LM, "f")
                         .getPosition()),
