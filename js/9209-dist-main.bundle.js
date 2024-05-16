@@ -25079,8 +25079,12 @@ let ghostData = {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
                 ghostData = {
-                    position: e.getPosition(),
-                    speed: e.getSpeedKmh
+                    position: {
+                        x: e.getPosition().x,
+                        y: e.getPosition().y,
+                        z: e.getPosition().z
+                    },
+                    speed: e.getSpeedKmh()
                 }
                 console.log(ghostData) //.getPosition()
                 console.log(e.cameraOrbit)
