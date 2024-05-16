@@ -3,6 +3,11 @@ let color = 0;
 let posSyncIndex = 0;
 let ghostPos;
 let simulationSpeed = 2;
+
+let ghostData = {
+    position: null,
+    speed: null
+}
 (() => {
     var e = {
             23: (e, t, i) => {
@@ -10101,10 +10106,8 @@ let simulationSpeed = 2;
                         .invert()
                 }
                 this.updateCamera = function (e) {
-                    console.log(e)
                     if (null === n)
                         return;
-                    console.log(e)
                     b.near = _.near = y.near = e.near, b.far = _.far = y.far = e.far, E === b.near && S === b.far || (n.updateRenderState({
                         depthNear: b.near,
                         depthFar: b.far
@@ -25075,7 +25078,13 @@ let simulationSpeed = 2;
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
-                console.log(e) //.getPosition()
+                ghostData = {
+                    position: e.getPosition(),
+                    speed: e.getSpeedKmh
+                }
+                console.log(ghostData) //.getPosition()
+                console.log(e.cameraOrbit)
+                console.log(e.controls)
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
