@@ -7,7 +7,7 @@ let simulationSpeed = 2;
 let ghostData = {
     position: null,
     speed: null
-}
+};
 (() => {
     var e = {
             23: (e, t, i) => {
