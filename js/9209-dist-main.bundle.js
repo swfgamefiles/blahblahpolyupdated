@@ -18949,7 +18949,6 @@ let ghostData = {
                         .getWorldTransform(e);
                     const t = e.getOrigin(),
                         i = new Ge(t.x(), t.y(), t.z());
-                    // console.log(i) // CAR POSITION
                     return Ammo.destroy(e), i
                 }
             }
@@ -19676,9 +19675,7 @@ let ghostData = {
             }
             get cameraCockpit() {
                 let val = Ug(this, eg, "f")
-                .camera
-                console.log(`Camera cockpit value${val}`)
-       
+                .camera 
                 return val
             }
             set audioVolume(e) {
@@ -21670,8 +21667,7 @@ let ghostData = {
                             const n = c.domElement;
                             if (c.object.isPerspectiveCamera) {
                                 const r = c.object.position;
-                                console.log(r)
-                                e.copy(r)
+                                 e.copy(r)
                                     .sub(c.target);
                                 let s = e.length();
                                 s *= Math.tan(c.object.fov / 2 * Math.PI / 180), N(2 * t * s / n.clientHeight, c.object.matrix), U(2 * i * s / n.clientHeight, c.object.matrix)
@@ -25086,7 +25082,7 @@ let ghostData = {
                     },
                     speed: e.getSpeedKmh()
                 }
-                console.log(ghostData) //.getPosition()
+                console.log(ghostData)
                 console.log(e.cameraOrbit)
                 console.log(e.controls.getControls())
             }
@@ -27960,7 +27956,6 @@ let ghostData = {
                                 if ("string" != typeof t.carColors)
                                     return void i("JSON carColors field has incorrect type");
                                 const l = ch.deserialize(t.carColors);
-                                console.log(r)
                                 e({
                                     recording: r,
                                     time: o,
