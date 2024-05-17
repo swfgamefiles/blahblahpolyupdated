@@ -25084,19 +25084,7 @@ let ghostData = {
                 }
                 console.log(ghostData)
                 console.log(e.cameraOrbit)
-                constructor(c) {
-                    HE.set(this, void 0), VE(this, HE, e, "f")
-                }    
-                const [t, i, n, r] = GE(this, HE, "f")
-                 .getFrame(c);
-                let currentControls = {
-                up: t,
-                right: i,
-                down: n,
-                left: r
-                 }
-                console.log(currentControls)
-                //e.controls.getControls(0)
+                console.log(e.controls.getControls())
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
