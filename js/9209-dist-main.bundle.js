@@ -25088,7 +25088,7 @@ let ghostData = {
                 }
                 console.log(ghostData) //.getPosition()
                 console.log(e.cameraOrbit)
-                console.log(e.controls)
+                console.log(e.controls.getControls())
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
