@@ -19819,6 +19819,8 @@ let ghostData = {
                 }
                 if (isOdd(posSyncIndex) !== 1) { // index is even?
                     ghostPos = e
+                    let ghostCar = Ug(this, tg, "f")
+                    console.log(ghostCar)
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
