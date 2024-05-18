@@ -1,6 +1,5 @@
 var carSpeed = 0;
 let posSyncIndex = 0;
-let ghostPos;
 let simulationSpeed = 2;
 
 let ghostData = {
@@ -10133,7 +10132,7 @@ let ghostData = {
                             f = a * d,
                             p = n / (-h + d),
                             m = p * -h; // HERE CAM CODE
-                        t.matrixWorld.decompose(ghostPos, e.quaternion, e.scale), e.translateX(m), e.translateZ(p), e.matrixWorld.compose(ghostPos, e.quaternion, e.scale), e.matrixWorldInverse.copy(e.matrixWorld)
+                        t.matrixWorld.decompose(0, e.quaternion, e.scale), e.translateX(m), e.translateZ(p), e.matrixWorld.compose(0, e.quaternion, e.scale), e.matrixWorldInverse.copy(e.matrixWorld)
                             .invert();
                         const g = a + p,
                             v = o + p,
@@ -19819,10 +19818,10 @@ let ghostData = {
                 function isOdd(number) {
                     return number % 2 !== 0;
                 }
-                if (isOdd(posSyncIndex) !== 1) { // index is even?
-                    ghostPos = e
+                if (isOdd(posSyncIndex) !== 1) { // index is even? => ghost car
                     let ghostCar = Ug(this, tg, "f")
                     console.log(ghostCar)
+
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
@@ -25077,7 +25076,6 @@ let ghostData = {
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
-                const currentFrame = getFrame()
                 ghostData = {
                     position: {
                         x: e.getPosition().x,
@@ -25089,28 +25087,6 @@ let ghostData = {
                     camera: e.cameraOrbit
                 }
                 console.log(ghostData)
-                function getFrame() {
-                    function getCenterTimerValue() {
-                        const centerTimerSpans = document.querySelectorAll('.timer .center p span');
-                        if (centerTimerSpans.length === 0) {
-                            return "00:00.000";
-                        }
-                        const timerValue = Array.from(centerTimerSpans).map(span => span.textContent).join('');
-                        return timerValue;
-                    }
-                    function convertToMilliseconds(timeString) {
-                        const [minutes, secondsAndMillis] = timeString.split(':');
-                        const [seconds, millis] = secondsAndMillis.split('.');
-                        const minutesInMillis = parseInt(minutes, 10) * 60 * 1000;
-                        const secondsInMillis = parseInt(seconds, 10) * 1000;
-                        const millisInMillis = parseInt(millis, 10);
-
-                        const totalMillis = minutesInMillis + secondsInMillis + millisInMillis;
-                        return totalMillis;
-                    }
-                    const centerTimerValue = getCenterTimerValue();
-                    return convertToMilliseconds(centerTimerValue);
-                }
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
