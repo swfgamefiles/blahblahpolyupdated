@@ -25084,7 +25084,24 @@ let ghostData = {
                 }
                 console.log(ghostData)
                 console.log(e.cameraOrbit)
-                console.log(e.controls.getControls())
+                function getCenterTimerValue() {
+                    const centerTimerSpans = document.querySelectorAll('.timer .center p span');
+                    const timerValue = Array.from(centerTimerSpans).map(span => span.textContent).join('');
+                    return timerValue;
+                }
+                function convertToMilliseconds(timeString) {
+                    const [minutes, secondsAndMillis] = timeString.split(':');
+                    const [seconds, millis] = secondsAndMillis.split('.');
+                    const minutesInMillis = parseInt(minutes, 10) * 60 * 1000;
+                    const secondsInMillis = parseInt(seconds, 10) * 1000;
+                    const millisInMillis = parseInt(millis, 10);
+                
+                    const totalMillis = minutesInMillis + secondsInMillis + millisInMillis;
+                    return totalMillis;
+                }
+                const centerTimerValue = getCenterTimerValue();
+                const currentFrame = convertToMilliseconds(centerTimerValue);
+                console.log(e.controls.getControls(currentFrame))
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
