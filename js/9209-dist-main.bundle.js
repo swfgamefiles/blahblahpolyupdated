@@ -25086,6 +25086,9 @@ let ghostData = {
                 console.log(e.cameraOrbit)
                 function getCenterTimerValue() {
                     const centerTimerSpans = document.querySelectorAll('.timer .center p span');
+                    if (centerTimerSpans.length === 0) {
+                        return "00:00.000";
+                    }
                     const timerValue = Array.from(centerTimerSpans).map(span => span.textContent).join('');
                     return timerValue;
                 }
