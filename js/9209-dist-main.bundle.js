@@ -18915,6 +18915,8 @@ let ghostData = {
                     .push(e)
             }
             getSpeedKmh() {
+                let obj = null != $p(this, Pp, "f") && this.hasStarted() ? $p(this, Pp, "f")
+                console.log(obj)
                 return null != $p(this, Pp, "f") && this.hasStarted() ? $p(this, Pp, "f")
                     .getCurrentSpeedKmHour() : 0
             }
@@ -19821,7 +19823,6 @@ let ghostData = {
                 if (isOdd(posSyncIndex) !== 1) { // index is even? => ghost car
                     let ghostCar = Ug(this, tg, "f")
                     currentFrame = ghostCar.physics.currentFrame()
-                    console.log(ghostCar)
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
