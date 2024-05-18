@@ -5,7 +5,9 @@ let simulationSpeed = 2;
 
 let ghostData = {
     position: null,
-    speed: null
+    speed: null,
+    input: null,
+    camera: null
 };
 (() => {
     var e = {
