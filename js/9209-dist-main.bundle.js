@@ -1,5 +1,4 @@
 var carSpeed = 0;
-let color = 0;
 let posSyncIndex = 0;
 let ghostPos;
 let simulationSpeed = 2;
