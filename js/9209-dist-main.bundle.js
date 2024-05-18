@@ -18915,8 +18915,8 @@ let ghostData = {
                     .push(e)
             }
             getSpeedKmh() {
-                let obj = null != $p(this, Pp, "f") && this.hasStarted() ? $p(this, Pp, "f")
-                console.log(obj)
+                let obj = $p(this, Pp, "f");
+                console.log(obj); // Log the object
                 return null != $p(this, Pp, "f") && this.hasStarted() ? $p(this, Pp, "f")
                     .getCurrentSpeedKmHour() : 0
             }
