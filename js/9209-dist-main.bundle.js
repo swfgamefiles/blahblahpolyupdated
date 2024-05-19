@@ -25076,7 +25076,7 @@ let ghostData = {
             }
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
-                if (currentFrame !== 0) {
+                if (currentFrame !== 0 || e.hasFinished() == false) {
                     const e = XM(this, NM, "f")
                     ghostData = {
                         position: {
