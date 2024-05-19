@@ -25087,7 +25087,7 @@ let ghostData = {
                     input: e.controls.getControls(currentFrame),
                     camera: e.cameraOrbit
                 }
-                console.log(ghostData)
+                console.log(ghostData.input)
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
