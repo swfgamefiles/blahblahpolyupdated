@@ -19822,8 +19822,7 @@ let ghostData = {
                 }
                 if (isOdd(posSyncIndex) !== 1) { // index is even? => ghost car
                     let ghostCar = Ug(this, tg, "f")
-                    console.log(ghostCar)
-                    currentFrame = ghostCar.physics().currentFrame()
+                    currentFrame = ghostCar.physics.currentFrame;
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
