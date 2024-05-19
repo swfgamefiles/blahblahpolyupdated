@@ -25089,6 +25089,7 @@ let ghostData = {
                         camera: e.cameraOrbit
                     }
                     console.log(ghostData)
+                    console.log(e)
                 }
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
