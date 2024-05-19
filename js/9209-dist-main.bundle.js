@@ -25076,18 +25076,20 @@ let ghostData = {
             }
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
-                const e = XM(this, NM, "f")
-                ghostData = {
-                    position: {
-                        x: e.getPosition().x,
-                        y: e.getPosition().y,
-                        z: e.getPosition().z
-                    },
-                    speed: e.getSpeedKmh(),
-                    input: e.controls.getControls(currentFrame),
-                    camera: e.cameraOrbit
+                if (currentFrame !== 0) {
+                    const e = XM(this, NM, "f")
+                    ghostData = {
+                        position: {
+                            x: e.getPosition().x,
+                            y: e.getPosition().y,
+                            z: e.getPosition().z
+                        },
+                        speed: e.getSpeedKmh(),
+                        input: e.controls.getControls(currentFrame),
+                        camera: e.cameraOrbit
+                    }
+                    console.log(ghostData)
                 }
-                console.log(ghostData.input)
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
