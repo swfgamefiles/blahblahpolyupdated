@@ -8,6 +8,7 @@ let ghostData = {
     input: null,
     camera: null
 };
+let extraData = {}
 (() => {
     var e = {
         23: (e, t, i) => {
