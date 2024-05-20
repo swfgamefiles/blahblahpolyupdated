@@ -19824,7 +19824,7 @@ let ghostData = {
                 if (isOdd(posSyncIndex) !== 1) { // index is even? => ghost car
                     let ghostCar = Ug(this, tg, "f")
                     currentFrame = ghostCar.physics.currentFrame;
-                    ghostData.isBrakeLightEnabled = e.isBrakeLightEnabled()
+                    ghostData.isBrakeLightEnabled = ghostCar.isBrakeLightEnabled()
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
