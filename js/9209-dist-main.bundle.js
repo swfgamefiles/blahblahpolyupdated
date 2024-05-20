@@ -6,9 +6,9 @@ let ghostData = {
     position: null,
     speed: null,
     input: null,
-    camera: null
+    camera: null,
+    isBrakeLightEnabled: null
 };
-let extraData = {}
 (() => {
     var e = {
         23: (e, t, i) => {
