@@ -25088,7 +25088,8 @@ let ghostData = {
                         },
                         speed: e.getSpeedKmh(),
                         input: e.controls.getControls(currentFrame),
-                        camera: e.cameraOrbit
+                        camera: e.cameraOrbit,
+                        isBrakeLightEnabled: ghostData.isBrakeLightEnabled
                     }
                     console.log(ghostData)
                     console.log(e)
