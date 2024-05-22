@@ -25094,7 +25094,9 @@ let train = [];
                         input: e.controls.getControls(ghostData.advancedCar.physics.currentFrame),
                         camera: e.cameraOrbit,
                         advancedCar: ghostData.advancedCar,
-                        wheelInfo: ghostData.wheelInfo
+                        wheelInfo: {
+                            contact: ghostData.wheelInfo.contact
+                        }
                     }
                     console.log(ghostData)
                 }
