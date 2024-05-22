@@ -7,6 +7,7 @@ let ghostData = {
     camera: null,
     advancedCar: null
 };
+let train = []
 (() => {
     var e = {
         23: (e, t, i) => {
@@ -18921,6 +18922,7 @@ let ghostData = {
             }
             start() {
                 Qp(this, Fp, !0, "f")
+                console.log("STARTED GATHERING AI DATA")
                 train = [] // clear whenever a new run will start
             }
             hasStarted() {
