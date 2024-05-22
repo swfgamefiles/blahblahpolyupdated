@@ -25080,7 +25080,8 @@ let train = [];
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
                     for (let t = 0; t < 4; t++) {
-                        const i = ghostData.advancedCar.getWheelPosition(t)
+                        const i = ghostData.advancedCar
+                        ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
                         console.log(i)
                     }
                     ghostData = {
@@ -25092,7 +25093,8 @@ let train = [];
                         speed: e.getSpeedKmh(),
                         input: e.controls.getControls(ghostData.advancedCar.physics.currentFrame),
                         camera: e.cameraOrbit,
-                        advancedCar: ghostData.advancedCar
+                        advancedCar: ghostData.advancedCar,
+                        wheelInfo: ghostData.wheelInfo
                     }
                     console.log(ghostData)
                 }
