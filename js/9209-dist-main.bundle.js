@@ -25080,8 +25080,7 @@ let train = [];
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
                     for (let t = 0; t < 4; t++) {
-                        const i = Ug(this, tg, "f")
-                            .getWheelPosition(t)
+                        const i = ghostData.advancedCar.getWheelPosition(t)
                         console.log(i)
                     }
                     ghostData = {
