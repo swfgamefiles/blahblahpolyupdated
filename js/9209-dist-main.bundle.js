@@ -18922,7 +18922,6 @@ let train = [];
             }
             start() {
                 Qp(this, Fp, !0, "f")
-                console.log("STARTED GATHERING AI DATA")
                 train = [] // clear whenever a new run will start
             }
             hasStarted() {
