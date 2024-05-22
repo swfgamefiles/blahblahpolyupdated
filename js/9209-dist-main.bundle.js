@@ -25083,6 +25083,7 @@ let train = [];
                         const i = Ug(this, tg, "f")
                             .getWheelPosition(t)
                         console.log(i)
+                    }
                     ghostData = {
                         position: {
                             x: e.getPosition().x,
