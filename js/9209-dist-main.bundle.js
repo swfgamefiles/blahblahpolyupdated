@@ -7,7 +7,7 @@ let ghostData = {
     camera: null,
     advancedCar: null
 };
-let train = []
+let train = [];
 (() => {
     var e = {
         23: (e, t, i) => {
