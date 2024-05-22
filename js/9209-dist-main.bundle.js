@@ -1,7 +1,6 @@
 var carSpeed = 0;
 let posSyncIndex = 0;
 let simulationSpeed = 2;
-let currentFrame = 0
 let ghostData = {
     position: null,
     speed: null,
@@ -19823,7 +19822,6 @@ let ghostData = {
                 }
                 if (isOdd(posSyncIndex) !== 1) { // index is even? => ghost car
                     let ghostCar = Ug(this, tg, "f")
-                    currentFrame = ghostCar.physics.currentFrame;
                     ghostData.advancedCar = ghostCar
                 }
                 posSyncIndex++
