@@ -24778,7 +24778,7 @@ let ghostData = {
                             .controls.getControls(0);
                         (e.up || e.down) && (BE(this, RE, "f")
                             .hasStarted() || BE(this, RE, "f")
-                                .start())
+                                .start(), console.log("First start"))
                             console.log("Started.")
                     }
                     BE(this, RE, "f")
@@ -25197,7 +25197,6 @@ let ghostData = {
                         (e.up || e.down) && (XM(this, LM, "f")
                             .hasStarted() || (XM(this, LM, "f")
                                 .start(), null === (n = XM(this, NM, "f")) || void 0 === n || n.start()))
-                            console.log("Started! #2")
                     }
                     XM(this, CM, "f")
                         .update(XM(this, LM, "f"), e), XM(this, kM, "f")
