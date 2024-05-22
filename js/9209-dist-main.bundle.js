@@ -18885,23 +18885,23 @@ let train = [];
                         .updateWheelTransform(e, !0)
             }
             dispose() {
-                $p(this, Rp, "f")
-                    .world.removeRigidBody($p(this, Lp, "f")), Ammo.destroy($p(this, Lp, "f")
-                        .getMotionState()), Ammo.destroy($p(this, Lp, "f"));
-                for (let e = 0; e < $p(this, Ip, "f")
-                    .getNumChildShapes(); e++)
-                    Ammo.destroy($p(this, Ip, "f")
-                        .getChildShape(e));
-                Ammo.destroy($p(this, Ip, "f")), $p(this, Rp, "f")
-                    .world.removeAction($p(this, Pp, "f"));
-                for (let e = 0; e < $p(this, Pp, "f")
-                    .getNumWheels(); ++e)
-                    Ammo.destroy($p(this, Pp, "f")
-                        .getWheelInfo(e));
-                Ammo.destroy($p(this, Pp, "f")), $p(this, Rp, "f")
-                    .removePreStepEventListener($p(this, Hp, "f")), $p(this, Rp, "f")
-                        .removePostStepEventListener($p(this, Vp, "f")), $p(this, Rp, "f")
-                            .dispose()
+                //$p(this, Rp, "f")
+                //    .world.removeRigidBody($p(this, Lp, "f")), Ammo.destroy($p(this, Lp, "f")
+                //        .getMotionState()), Ammo.destroy($p(this, Lp, "f"));
+                //for (let e = 0; e < $p(this, Ip, "f")
+                //    .getNumChildShapes(); e++)
+                //    Ammo.destroy($p(this, Ip, "f")
+                //        .getChildShape(e));
+                //Ammo.destroy($p(this, Ip, "f")), $p(this, Rp, "f")
+                //    .world.removeAction($p(this, Pp, "f"));
+                //for (let e = 0; e < $p(this, Pp, "f")
+                //    .getNumWheels(); ++e)
+                //    Ammo.destroy($p(this, Pp, "f")
+                //        .getWheelInfo(e));
+                //Ammo.destroy($p(this, Pp, "f")), $p(this, Rp, "f")
+                //    .removePreStepEventListener($p(this, Hp, "f")), $p(this, Rp, "f")
+                //        .removePostStepEventListener($p(this, Vp, "f")), $p(this, Rp, "f")
+                //            .dispose()
             }
             get physics() {
                 return $p(this, Rp, "f")
