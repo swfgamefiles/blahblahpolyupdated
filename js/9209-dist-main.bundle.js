@@ -25079,6 +25079,10 @@ let train = [];
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
+                    for (let t = 0; t < 4; t++) {
+                        const i = Ug(this, tg, "f")
+                            .getWheelPosition(t)
+                        console.log(i)
                     ghostData = {
                         position: {
                             x: e.getPosition().x,
