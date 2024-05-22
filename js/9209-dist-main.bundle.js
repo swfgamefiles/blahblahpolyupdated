@@ -25087,7 +25087,7 @@ let ghostData = {
                             z: e.getPosition().z
                         },
                         speed: e.getSpeedKmh(),
-                        input: e.controls.getControls(currentFrame),
+                        input: e.controls.getControls(ghostData.advancedCar.physics.currentFrame),
                         camera: e.cameraOrbit,
                         advancedCar: ghostData.advancedCar,
                         time: e.getTime()
