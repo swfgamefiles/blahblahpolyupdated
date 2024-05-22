@@ -7,7 +7,7 @@ let ghostData = {
     speed: null,
     input: null,
     camera: null,
-    isBrakeLightEnabled: null
+    advancedCar: null
 };
 (() => {
     var e = {
