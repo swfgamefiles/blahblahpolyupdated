@@ -1,6 +1,5 @@
 var carSpeed = 0;
 let posSyncIndex = 0;
-let simulationSpeed = 2;
 let ghostData = {
     position: null,
     speed: null,
@@ -18922,7 +18921,7 @@ let ghostData = {
             }
             start() {
                 Qp(this, Fp, !0, "f")
-                console.log("STARTED")
+                train = [] // clear whenever a new run will start
             }
             hasStarted() {
                 return $p(this, Fp, "f")
@@ -24779,8 +24778,7 @@ let ghostData = {
                             .controls.getControls(0);
                         (e.up || e.down) && (BE(this, RE, "f")
                             .hasStarted() || BE(this, RE, "f")
-                                .start(), console.log("First start"))
-                            console.log("Started.")
+                                .start())
                     }
                     BE(this, RE, "f")
                         .update(e), null === (t = BE(this, NE, "f")) || void 0 === t || t.update(BE(this, RE, "f"), e), null === (i = BE(this, UE, "f")) || void 0 === i || i.update(BE(this, RE, "f")), null === (n = BE(this, DE, "f")) || void 0 === n || n.update(BE(this, RE, "f")), BE(this, TE, "f")
