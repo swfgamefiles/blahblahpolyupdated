@@ -18922,6 +18922,7 @@ let ghostData = {
             }
             start() {
                 Qp(this, Fp, !0, "f")
+                console.log("STARTED")
             }
             hasStarted() {
                 return $p(this, Fp, "f")
