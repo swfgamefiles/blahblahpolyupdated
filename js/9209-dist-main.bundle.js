@@ -5,7 +5,10 @@ let ghostData = {
     speed: null,
     input: null,
     camera: null,
-    advancedCar: null
+    advancedCar: null,
+    wheelInfo: {
+        contact: null
+    }
 };
 let train = [];
 (() => {
