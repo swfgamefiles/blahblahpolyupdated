@@ -25089,7 +25089,8 @@ let ghostData = {
                         speed: e.getSpeedKmh(),
                         input: e.controls.getControls(currentFrame),
                         camera: e.cameraOrbit,
-                        advancedCar: ghostData.advancedCar
+                        advancedCar: ghostData.advancedCar,
+                        time: e.getTime()
                     }
                     console.log(ghostData)
                 }
