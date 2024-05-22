@@ -24779,6 +24779,7 @@ let ghostData = {
                         (e.up || e.down) && (BE(this, RE, "f")
                             .hasStarted() || BE(this, RE, "f")
                                 .start())
+                            console.log("Started.")
                     }
                     BE(this, RE, "f")
                         .update(e), null === (t = BE(this, NE, "f")) || void 0 === t || t.update(BE(this, RE, "f"), e), null === (i = BE(this, UE, "f")) || void 0 === i || i.update(BE(this, RE, "f")), null === (n = BE(this, DE, "f")) || void 0 === n || n.update(BE(this, RE, "f")), BE(this, TE, "f")
