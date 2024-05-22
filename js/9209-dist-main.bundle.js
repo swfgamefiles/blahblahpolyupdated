@@ -19824,7 +19824,7 @@ let ghostData = {
                 if (isOdd(posSyncIndex) !== 1) { // index is even? => ghost car
                     let ghostCar = Ug(this, tg, "f")
                     currentFrame = ghostCar.physics.currentFrame;
-                    ghostData.isBrakeLightEnabled = ghostCar.isBrakeLightEnabled()
+                    ghostData.advancedCar = ghostCar
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
@@ -25079,7 +25079,7 @@ let ghostData = {
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
-                if (e.hasStarted() == false && e.hasFinished() == false) {
+                if (e.hasStarted() && e.hasFinished() == false) {
                     ghostData = {
                         position: {
                             x: e.getPosition().x,
@@ -25089,10 +25089,9 @@ let ghostData = {
                         speed: e.getSpeedKmh(),
                         input: e.controls.getControls(currentFrame),
                         camera: e.cameraOrbit,
-                        isBrakeLightEnabled: ghostData.isBrakeLightEnabled
+                        advancedCar: ghostData.advancedCar
                     }
                     console.log(ghostData)
-                    console.log(e)
                 }
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
