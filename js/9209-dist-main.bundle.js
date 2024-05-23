@@ -25089,7 +25089,6 @@ let alreadyEnded = false;
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
                         ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
-                        console.log(i.getWheelSkidInfo(t))
                     }
                     ghostData = {
                         position: {
@@ -25108,6 +25107,7 @@ let alreadyEnded = false;
                     }
                     console.log(ghostData)
                     train.push(ghostData)
+                    console.log(ghostData.wheelInfo.skidInfo+" "+train.length)
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
                     alreadyEnded = true // stop the loop
                     console.log("ENDED")
