@@ -25089,6 +25089,7 @@ let alreadyEnded = false;
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
                         ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
+                        console.log(i.getWheelSkidInfo(t))
                     }
                     ghostData = {
                         position: {
