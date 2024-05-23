@@ -25084,7 +25084,7 @@ let train = [];
                 if (e.hasStarted() && e.hasFinished() == false) {
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
-                        ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
+                        ghostData.wheelInfo.contact[t+1] = i.getWheelInContact(0)
                         console.log(i)
                     }
                     ghostData = {
