@@ -12,7 +12,7 @@ let ghostData = {
     }
 };
 let train = [];
-let running = false;
+let alreadyEnded = false;
 (() => {
     var e = {
         23: (e, t, i) => {
@@ -18928,6 +18928,7 @@ let running = false;
             start() {
                 Qp(this, Fp, !0, "f")
                 train = [] // clear whenever a new run will start
+                alreadyEnded = false // reset the trigger
             }
             hasStarted() {
                 return $p(this, Fp, "f")
@@ -25084,7 +25085,6 @@ let running = false;
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
-                    running = true
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
@@ -25107,8 +25107,9 @@ let running = false;
                     }
                     console.log(ghostData)
                     train.push(ghostData)
-                } else if (e.hasStarted() && e.hasFinished()) {
+                } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
                     console.log("ENDED")
+                    console.log(train)
                 }
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
