@@ -7,7 +7,7 @@ let ghostData = {
     camera: null,
     advancedCar: null,
     wheelInfo: {
-        contact: null
+        contact: {}
     }
 };
 let train = [];
@@ -25084,7 +25084,7 @@ let train = [];
                 if (e.hasStarted() && e.hasFinished() == false) {
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
-                        ghostData.wheelInfo.contact[t+1] = i.getWheelInContact(0)
+                        ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
                         console.log(i)
                     }
                     ghostData = {
