@@ -8,7 +8,9 @@ let ghostData = {
     advancedCar: null,
     wheelInfo: {
         contact: [],
-        skidInfo: []
+        skidInfo: [
+            {},{},{},{}
+        ]
     }
 };
 let train = [];
