@@ -7,8 +7,8 @@ let ghostData = {
     camera: null,
     advancedCar: null,
     wheelInfo: {
-        contact: {},
-        skidInfo: {}
+        contact: [],
+        skidInfo: []
     }
 };
 let train = [];
@@ -25087,6 +25087,7 @@ let train = [];
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
                         console.log(i.getWheelSkidInfo(t))
+                        ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
                     }
                     ghostData = {
                         position: {
