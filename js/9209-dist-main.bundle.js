@@ -7,13 +7,8 @@ let ghostData = {
     camera: null,
     advancedCar: null,
     wheelInfo: {
-        contact: [],
-        skidInfo: {
-            WheelFL: 1, 
-            WheelFR: 1, 
-            WheelBL: 1, 
-            WheelBR: 1
-        }
+        contact: {},
+        skidInfo: {}
     }
 };
 let train = [];
@@ -25091,9 +25086,7 @@ let train = [];
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
-                        console.log(i.getWheelSkidInfo(t))
-                        let wheels = ["WheelFL", "WheelFR", "WheelBL", "WheelBR"]
-                        ghostData.wheelInfo.skidInfo[wheels[t]] = i.getWheelSkidInfo(t)
+                        ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
                     }
                     ghostData = {
                         position: {
@@ -25106,7 +25099,8 @@ let train = [];
                         camera: e.cameraOrbit,
                         advancedCar: ghostData.advancedCar,
                         wheelInfo: {
-                            contact: ghostData.wheelInfo.contact
+                            contact: ghostData.wheelInfo.contact,
+                            skidInfo: ghostData.wheelInfo.skidInfo
                         }
                     }
                     console.log(ghostData)
