@@ -25086,6 +25086,7 @@ let train = [];
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
+                        console.log(i.getWheelSkidInfo(t))
                         ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
                     }
                     ghostData = {
