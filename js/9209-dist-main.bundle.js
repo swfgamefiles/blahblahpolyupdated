@@ -12,6 +12,7 @@ let ghostData = {
     }
 };
 let train = [];
+let running = false;
 (() => {
     var e = {
         23: (e, t, i) => {
@@ -25083,6 +25084,7 @@ let train = [];
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
+                    running = true
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
@@ -25104,6 +25106,9 @@ let train = [];
                         }
                     }
                     console.log(ghostData)
+                    train.push(ghostData)
+                } else if (e.hasStarted() && e.hasFinished()) {
+                    console.log("ENDED")
                 }
             }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
