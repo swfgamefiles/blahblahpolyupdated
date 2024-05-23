@@ -8,18 +8,10 @@ let ghostData = {
     advancedCar: null,
     wheelInfo: {
         contact: [],
-        skidInfo: []
+        skidInfo: {}
     }
 };
 let train = [];
-for (let t = 0; t < 4; t++) {
-    function ensureArrayIndex(arr, index, defaultValue = 0) {
-        while (arr.length <= index) {
-            arr.push(defaultValue); // Push the default value (e.g., 0) until the array is long enough
-        }
-    }
-    ensureArrayIndex(ghostData.wheelInfo.skidInfo, t);
-};
 (() => {
     var e = {
         23: (e, t, i) => {
@@ -25095,7 +25087,8 @@ for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
                         console.log(i.getWheelSkidInfo(t))
-                        ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
+                        let wheels = ["WheelFL", "WheelFR", "WheelBL", "WheelBR"]
+                        ghostData.wheelInfo.skidInfo[wheels[t]] = i.getWheelSkidInfo(t)
                     }
                     ghostData = {
                         position: {
