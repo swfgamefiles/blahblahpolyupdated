@@ -25107,7 +25107,7 @@ let alreadyEnded = false;
                     }
                     console.log(ghostData)
                     train.push(ghostData)
-                    console.log(ghostData.wheelInfo.skidInfo+" "+train.length)
+                    console.log(JSON.stringify(ghostData.wheelInfo.skidInfo)+" "+train.length)
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
                     alreadyEnded = true // stop the loop
                     console.log("ENDED")
