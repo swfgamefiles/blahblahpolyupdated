@@ -25108,6 +25108,7 @@ let alreadyEnded = false;
                     console.log(ghostData)
                     train.push(ghostData)
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
+                    alreadyEnded = true // stop the loop
                     console.log("ENDED")
                     console.log(train)
                 }
