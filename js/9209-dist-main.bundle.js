@@ -25087,7 +25087,6 @@ let train = [];
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
                         console.log(i.getWheelSkidInfo(t))
-                        ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
                     }
                     ghostData = {
                         position: {
