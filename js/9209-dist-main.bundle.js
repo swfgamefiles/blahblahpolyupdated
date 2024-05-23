@@ -25107,10 +25107,10 @@ let alreadyEnded = false;
                     }
                     console.log(ghostData)
                     train.push(ghostData.wheelInfo.skidInfo)
-                    if(JSON.stringify(ghostData.wheelInfo.skidInfo) == {"0":1,"1":1,"2":1,"3":1}) {
+                    if(ghostData.wheelInfo.skidInfo[3] == 1) {
                         console.log("SkidInfo has not changed.")
                     } else {
-                    console.log(JSON.stringify(ghostData.wheelInfo.skidInfo)+" "+train.length)
+                        console.log(JSON.stringify(ghostData.wheelInfo.skidInfo)+" "+train.length)
                     }
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
                     alreadyEnded = true // stop the loop
