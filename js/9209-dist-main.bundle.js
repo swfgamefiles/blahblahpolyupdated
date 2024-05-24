@@ -14,11 +14,32 @@ let ghostData = {
 let train = [];
 let alreadyEnded = false;
 function deepClone(obj, hash = new WeakMap()) {
-    if (Object(obj) !== obj || obj instanceof Function) return obj; // Return non-objects or functions as is
-    if (hash.has(obj)) return hash.get(obj); // Return cached copy for circular references
-    let result = obj instanceof Array ? [] : obj instanceof Date ? new Date(obj) : obj.constructor ? new obj.constructor() : Object.create(null);
-    hash.set(obj, result); // Cache the copy
-    return Object.assign(result, ...Object.keys(obj).map(key => ({ [key]: deepClone(obj[key], hash) })));
+    if (Object(obj) !== obj || obj instanceof Function) return obj; // Return primitive values and functions as is
+    if (hash.has(obj)) return hash.get(obj); // Handle circular references
+
+    let result;
+    if (obj instanceof Array) {
+        result = [];
+    } else if (obj instanceof Date) {
+        result = new Date(obj);
+    } else if (obj.constructor) {
+        result = new obj.constructor();
+    } else {
+        result = Object.create(null);
+    }
+    hash.set(obj, result); // Cache result before recursion
+
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            const desc = Object.getOwnPropertyDescriptor(obj, key);
+            if (desc && desc.writable) {
+                result[key] = deepClone(obj[key], hash);
+            } else {
+                Object.defineProperty(result, key, desc);
+            }
+        }
+    }
+    return result;
 };
 (() => {
     var e = {
