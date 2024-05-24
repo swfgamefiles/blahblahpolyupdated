@@ -10201,34 +10201,36 @@ function deepClone(obj, hash = new WeakMap()) {
                 let O = null;
                 const F = new un;
                 F.setAnimationLoop((function (t, n) {
-                    if (c = n.getViewerPose(l || s), f = n, null !== c) {
-                        const t = c.views;
-                        null !== u && (e.setRenderTargetFramebuffer(g, u.framebuffer), e.setRenderTarget(g));
-                        let i = !1;
-                        t.length !== b.cameras.length && (b.cameras.length = 0, i = !0);
-                        for (let n = 0; n < t.length; n++) {
-                            const r = t[n];
-                            let s = null;
-                            if (null !== u)
-                                s = u.getViewport(r);
-                            else {
-                                const t = h.getViewSubImage(d, r);
-                                s = t.viewport, 0 === n && (e.setRenderTargetTextures(g, t.colorTexture, d.ignoreDepthValues ? void 0 : t.depthStencilTexture), e.setRenderTarget(g))
+                    if (!gatheringGhostData) {
+                        if (c = n.getViewerPose(l || s), f = n, null !== c) {
+                            const t = c.views;
+                            null !== u && (e.setRenderTargetFramebuffer(g, u.framebuffer), e.setRenderTarget(g));
+                            let i = !1;
+                            t.length !== b.cameras.length && (b.cameras.length = 0, i = !0);
+                            for (let n = 0; n < t.length; n++) {
+                                const r = t[n];
+                                let s = null;
+                                if (null !== u)
+                                    s = u.getViewport(r);
+                                else {
+                                    const t = h.getViewSubImage(d, r);
+                                    s = t.viewport, 0 === n && (e.setRenderTargetTextures(g, t.colorTexture, d.ignoreDepthValues ? void 0 : t.depthStencilTexture), e.setRenderTarget(g))
+                                }
+                                let a = x[n];
+                                void 0 === a && (a = new $i, a.layers.enable(n), a.viewport = new Fe, x[n] = a), a.matrix.fromArray(r.transform.matrix), a.matrix.decompose(a.position, a.quaternion, a.scale), a.projectionMatrix.fromArray(r.projectionMatrix), a.projectionMatrixInverse.copy(a.projectionMatrix)
+                                    .invert(), a.viewport.set(s.x, s.y, s.width, s.height), 0 === n && (b.matrix.copy(a.matrix), b.matrix.decompose(b.position, b.quaternion, b.scale)), !0 === i && b.cameras.push(a)
                             }
-                            let a = x[n];
-                            void 0 === a && (a = new $i, a.layers.enable(n), a.viewport = new Fe, x[n] = a), a.matrix.fromArray(r.transform.matrix), a.matrix.decompose(a.position, a.quaternion, a.scale), a.projectionMatrix.fromArray(r.projectionMatrix), a.projectionMatrixInverse.copy(a.projectionMatrix)
-                                .invert(), a.viewport.set(s.x, s.y, s.width, s.height), 0 === n && (b.matrix.copy(a.matrix), b.matrix.decompose(b.position, b.quaternion, b.scale)), !0 === i && b.cameras.push(a)
                         }
+                        for (let e = 0; e < v.length; e++) {
+                            const t = w[e],
+                                i = v[e];
+                            null !== t && void 0 !== i && i.update(t, n, l || s)
+                        }
+                        O && O(t, n), n.detectedPlanes && i.dispatchEvent({
+                            type: "planesdetected",
+                            data: n
+                        }), f = null
                     }
-                    for (let e = 0; e < v.length; e++) {
-                        const t = w[e],
-                            i = v[e];
-                        null !== t && void 0 !== i && i.update(t, n, l || s)
-                    }
-                    O && O(t, n), n.detectedPlanes && i.dispatchEvent({
-                        type: "planesdetected",
-                        data: n
-                    }), f = null
                 })), this.setAnimationLoop = function (e) {
                     O = e
                 }, this.dispose = function () { }
