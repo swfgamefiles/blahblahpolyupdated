@@ -25107,7 +25107,7 @@ let alreadyEnded = false;
                     }
                     console.log(ghostData)
                     train.push(ghostData.skidInfo)
-                    if(ghostData.wheelInfo.skidInfo[3] == 1) {
+                    if(ghostData.skidInfo[3] == 1) {
                     } else {
                         console.log(JSON.stringify(ghostData.contact)+" "+train.length)
                     }
