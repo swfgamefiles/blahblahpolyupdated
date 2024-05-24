@@ -10910,6 +10910,7 @@ function deepClone(obj, hash = new WeakMap()) {
                         return void console.error("THREE.WebGLRenderer.render: camera is not an instance of THREE.Camera.");
                     if (!0 === _)
                         return;
+                    if (!gatheringGhostData) {
                     !0 === e.matrixWorldAutoUpdate && e.updateMatrixWorld(), null === t.parent && !0 === t.matrixWorldAutoUpdate && t.updateMatrixWorld(), !0 === Ie.enabled && !0 === Ie.isPresenting && (!0 === Ie.cameraAutoUpdate && Ie.updateCamera(t), t = Ie.getCamera()), !0 === e.isScene && e.onBeforeRender(y, e, t, T), g = _e.get(e, w.length), g.init(), w.push(g), $.multiplyMatrices(t.projectionMatrix, t.matrixWorldInverse), K.setFromProjectionMatrix($), J = this.localClippingEnabled, Z = xe.init(this.clippingPlanes, J), m = ye.get(e, v.length), m.init(), v.push(m), je(e, t, 0, y.sortObjects), m.finish(), !0 === y.sortObjects && m.sort(H, V), this.info.render.frame++, !0 === Z && xe.beginShadows();
                     const i = g.state.shadowsArray;
                     if (be.render(i, e, t), !0 === Z && xe.endShadows(), !0 === this.info.autoReset && this.info.reset(), Ee.render(m, e), g.setupLights(y._useLegacyLights), t.isArrayCamera) {
@@ -10921,6 +10922,7 @@ function deepClone(obj, hash = new WeakMap()) {
                     } else
                         Xe(m, e, t);
                     null !== T && (ce.updateMultisampleRenderTarget(T), ce.updateRenderTargetMipmap(T)), !0 === e.isScene && e.onAfterRender(y, e, t), Ce.resetDefaultState(), L = -1, I = null, w.pop(), g = w.length > 0 ? w[w.length - 1] : null, v.pop(), m = v.length > 0 ? v[v.length - 1] : null
+                    }
                 }, this.getActiveCubeFace = function () {
                     return x
                 }, this.getActiveMipmapLevel = function () {
