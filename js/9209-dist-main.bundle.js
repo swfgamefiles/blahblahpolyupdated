@@ -13,6 +13,13 @@ let ghostData = {
 };
 let train = [];
 let alreadyEnded = false;
+function deepClone(obj, hash = new WeakMap()) {
+    if (Object(obj) !== obj || obj instanceof Function) return obj; // Return non-objects or functions as is
+    if (hash.has(obj)) return hash.get(obj); // Return cached copy for circular references
+    let result = obj instanceof Array ? [] : obj instanceof Date ? new Date(obj) : obj.constructor ? new obj.constructor() : Object.create(null);
+    hash.set(obj, result); // Cache the copy
+    return Object.assign(result, ...Object.keys(obj).map(key => ({ [key]: deepClone(obj[key], hash) })));
+};
 (() => {
     var e = {
         23: (e, t, i) => {
@@ -25085,14 +25092,6 @@ let alreadyEnded = false;
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
-                    function deepClone(obj, hash = new WeakMap()) {
-                        if (Object(obj) !== obj || obj instanceof Function) return obj; // Return non-objects or functions as is
-                        if (hash.has(obj)) return hash.get(obj); // Return cached copy for circular references
-                        let result = obj instanceof Array ? [] : obj instanceof Date ? new Date(obj) : obj.constructor ? new obj.constructor() : Object.create(null);
-                        hash.set(obj, result); // Cache the copy
-                        return Object.assign(result, ...Object.keys(obj).map(key => ({ [key]: deepClone(obj[key], hash) })));
-                    }
-                    
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
