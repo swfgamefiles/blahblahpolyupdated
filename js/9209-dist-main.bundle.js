@@ -25134,12 +25134,12 @@ function deepClone(obj, hash = new WeakMap()) {
                         camera: e.cameraOrbit,
                         advancedCar: ghostData.advancedCar,
                         wheelInfo: {
-                            contact: Object.assign({}, ghostData.wheelInfo.contact),
-                            skidInfo: Object.assign({}, ghostData.wheelInfo.skidInfo)
+                            contact: [...ghostData.wheelInfo.contact],
+                            skidInfo: [...ghostData.wheelInfo.skidInfo]
                         }
                     }
                     console.log(deepClone(ghostData))
-                    train.push(Object.assign({}, ghostData))
+                    train.push(Object.assign({}, ghostData)
                     if(ghostData.wheelInfo.skidInfo[3] == 1) {
                     } else {
                         console.log(JSON.stringify(ghostData.wheelInfo.skidInfo)+" "+train.length)
