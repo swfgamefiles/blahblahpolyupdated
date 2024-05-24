@@ -25123,6 +25123,10 @@ function deepClone(obj, hash = new WeakMap()) {
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
                         ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
                     }
+                    // converting them to arrays instead of objects.
+                    ghostData.wheelInfo.contact = Object.values(ghostData.wheelInfo.contact);
+                    ghostData.wheelInfo.skidInfo = Object.values(ghostData.wheelInfo.skidInfo);
+
                     ghostData = {
                         position: {
                             x: e.getPosition().x,
