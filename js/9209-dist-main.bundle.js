@@ -13,6 +13,7 @@ let ghostData = {
 };
 let train = [];
 let alreadyEnded = false;
+let gatheringGhostData = false;
 // Define deepClone function outside the loop
 function deepClone(obj, hash = new WeakMap()) {
     if (Object(obj) !== obj || obj instanceof Function) return obj; // Return primitive values and functions as is
@@ -18962,6 +18963,7 @@ function deepClone(obj, hash = new WeakMap()) {
                 Qp(this, Fp, !0, "f")
                 train = [] // clear whenever a new run will start
                 alreadyEnded = false // reset the trigger
+                gatheringGhostData = false
             }
             hasStarted() {
                 return $p(this, Fp, "f")
@@ -25118,6 +25120,7 @@ function deepClone(obj, hash = new WeakMap()) {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
+                    gatheringGhostData = true;
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
@@ -25143,7 +25146,8 @@ function deepClone(obj, hash = new WeakMap()) {
                     const clonedGhostData = deepClone(ghostData); // Clone ghostData
                     train.push(clonedGhostData);
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
-                    alreadyEnded = true // stop the loop
+                    alreadyEnded = true; // stop the loop
+                    gatheringGhostData = false;
                     console.log("ENDED")
                     console.log(train)
                 }
@@ -30825,8 +30829,10 @@ function deepClone(obj, hash = new WeakMap()) {
                 let S = new kA(m, r, p, g, o, w, l, h, u, n, s, a, c, e, x, b, E, M),
                     T = 0;
                 u.setAnimationLoop((function (e) {
-                    const t = Math.max(e - T, 0) / 1e3;
-                    T = e, S.update(t), f.update(t, u.camera), p.update(), v.update(t)
+                    if (!gatheringGhostData) {
+                        const t = Math.max(e - T, 0) / 1e3;
+                        T = e, S.update(t), f.update(t, u.camera), p.update(), v.update(t)
+                    }
                 })), window.addEventListener("keyup", (function (e) {
                     a.checkKeyBinding(e, ry.ToggleFpsCounter) && v.toggle()
                 }))
