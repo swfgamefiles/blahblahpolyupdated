@@ -24653,21 +24653,23 @@ function deepClone(obj, hash = new WeakMap()) {
                     .removeChild(sE(this, $b, "f"))
             }
             update(e) {
-                const t = Math.abs(e.getSpeedKmh());
-                let i;
-                i = sE(this, nE, "f") ? t / 1.609344 : t;
-                carSpeed = i
-                const n = Math.trunc(i)
-                    .toString();
-                if (n != sE(this, iE, "f")) {
-                    sE(this, eE, "f")
-                        .innerHTML = "";
-                    for (let e = 0; e < n.length; ++e) {
-                        const t = document.createElement("span");
-                        t.textContent = n[e], sE(this, eE, "f")
-                            .appendChild(t)
+                if (!gatheringGhostData) {
+                    const t = Math.abs(e.getSpeedKmh());
+                    let i;
+                    i = sE(this, nE, "f") ? t / 1.609344 : t;
+                    carSpeed = i
+                    const n = Math.trunc(i)
+                        .toString();
+                    if (n != sE(this, iE, "f")) {
+                        sE(this, eE, "f")
+                            .innerHTML = "";
+                        for (let e = 0; e < n.length; ++e) {
+                            const t = document.createElement("span");
+                            t.textContent = n[e], sE(this, eE, "f")
+                                .appendChild(t)
+                        }
+                        rE(this, iE, n, "f")
                     }
-                    rE(this, iE, n, "f")
                 }
             }
         };
