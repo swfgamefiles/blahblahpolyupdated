@@ -6,6 +6,8 @@ let ghostData = {
     input: null,
     camera: null,
     advancedCar: null,
+    contact: {},
+    skidInfo: {},
     wheelInfo: {
         contact: {},
         skidInfo: {}
@@ -25087,8 +25089,8 @@ let alreadyEnded = false;
                 if (e.hasStarted() && e.hasFinished() == false) {
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
-                        ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
-                        ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
+                        ghostData.contact[t] = i.getWheelInContact(t)
+                        ghostData.skidInfo[t] = i.getWheelSkidInfo(t)
                     }
                     ghostData = {
                         position: {
@@ -25100,16 +25102,14 @@ let alreadyEnded = false;
                         input: e.controls.getControls(ghostData.advancedCar.physics.currentFrame),
                         camera: e.cameraOrbit,
                         advancedCar: ghostData.advancedCar,
-                        wheelInfo: {
-                            contact: ghostData.wheelInfo.contact,
-                            skidInfo: ghostData.wheelInfo.skidInfo
-                        }
+                        contact: ghostData.contact,
+                        skidInfo: ghostData.skidInfo
                     }
                     console.log(ghostData)
-                    train.push(ghostData.wheelInfo.contact)
+                    train.push(ghostData.skidInfo)
                     if(ghostData.wheelInfo.skidInfo[3] == 1) {
                     } else {
-                        console.log(JSON.stringify(ghostData.wheelInfo.contact)+" "+train.length)
+                        console.log(JSON.stringify(ghostData.contact)+" "+train.length)
                     }
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
                     alreadyEnded = true // stop the loop
