@@ -13,6 +13,7 @@ let ghostData = {
 };
 let train = [];
 let alreadyEnded = false;
+// Define deepClone function outside the loop
 function deepClone(obj, hash = new WeakMap()) {
     if (Object(obj) !== obj || obj instanceof Function) return obj; // Return primitive values and functions as is
     if (hash.has(obj)) return hash.get(obj); // Handle circular references
@@ -22,10 +23,14 @@ function deepClone(obj, hash = new WeakMap()) {
         result = [];
     } else if (obj instanceof Date) {
         result = new Date(obj);
-    } else if (obj.constructor) {
-        result = new obj.constructor();
+    } else if (obj instanceof Map) {
+        result = new Map(Array.from(obj, ([key, val]) => [deepClone(key, hash), deepClone(val, hash)]));
+    } else if (obj instanceof Set) {
+        result = new Set(Array.from(obj, val => deepClone(val, hash)));
+    } else if (obj instanceof Object) {
+        result = Object.create(Object.getPrototypeOf(obj));
     } else {
-        result = Object.create(null);
+        return obj; // Handle other types (e.g., Symbol, Buffer)
     }
     hash.set(obj, result); // Cache result before recursion
 
