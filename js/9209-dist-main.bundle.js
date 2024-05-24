@@ -24597,6 +24597,7 @@ function deepClone(obj, hash = new WeakMap()) {
                     .removeChild(Zb(this, Gb, "f"))
             }
             update(e, t) {
+                if (!gatheringGhostData) {
                 if (e.hasStarted() && Zb(this, Hb, "f")
                     .getSettingBoolean(jl.ResetHintEnabled))
                     if (e.getSpeedKmh() < 50 || e.hasFinished()) {
@@ -24617,6 +24618,7 @@ function deepClone(obj, hash = new WeakMap()) {
                 else
                     Zb(this, Bb, "m", Yb)
                         .call(this)
+                }
             }
         };
         var Qb, $b, eE, tE, iE, nE, rE = function (e, t, i, n, r) {
