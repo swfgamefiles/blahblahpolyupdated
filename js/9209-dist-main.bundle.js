@@ -10201,8 +10201,8 @@ function deepClone(obj, hash = new WeakMap()) {
                 let O = null;
                 const F = new un;
                 F.setAnimationLoop((function (t, n) {
-                    if (!gatheringGhostData) {
                         if (c = n.getViewerPose(l || s), f = n, null !== c) {
+                            if (!gatheringGhostData) {
                             const t = c.views;
                             null !== u && (e.setRenderTargetFramebuffer(g, u.framebuffer), e.setRenderTarget(g));
                             let i = !1;
@@ -10221,7 +10221,7 @@ function deepClone(obj, hash = new WeakMap()) {
                                     .invert(), a.viewport.set(s.x, s.y, s.width, s.height), 0 === n && (b.matrix.copy(a.matrix), b.matrix.decompose(b.position, b.quaternion, b.scale)), !0 === i && b.cameras.push(a)
                             }
                         }
-                    }
+                        }
                     for (let e = 0; e < v.length; e++) {
                         const t = w[e],
                             i = v[e];
@@ -30831,10 +30831,8 @@ function deepClone(obj, hash = new WeakMap()) {
                 let S = new kA(m, r, p, g, o, w, l, h, u, n, s, a, c, e, x, b, E, M),
                     T = 0;
                 u.setAnimationLoop((function (e) {
-                    if (!gatheringGhostData) {
-                        const t = Math.max(e - T, 0) / 1e3;
-                        T = e, S.update(t), f.update(t, u.camera), p.update(), v.update(t)
-                    }
+                    const t = Math.max(e - T, 0) / 1e3;
+                    T = e, S.update(t), f.update(t, u.camera), p.update(), v.update(t)
                 })), window.addEventListener("keyup", (function (e) {
                     a.checkKeyBinding(e, ry.ToggleFpsCounter) && v.toggle()
                 }))
