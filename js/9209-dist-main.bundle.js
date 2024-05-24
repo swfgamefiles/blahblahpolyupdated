@@ -6,8 +6,6 @@ let ghostData = {
     input: null,
     camera: null,
     advancedCar: null,
-    contact: {},
-    skidInfo: {},
     wheelInfo: {
         contact: {},
         skidInfo: {}
@@ -25089,8 +25087,8 @@ let alreadyEnded = false;
                 if (e.hasStarted() && e.hasFinished() == false) {
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
-                        ghostData.contact[t] = i.getWheelInContact(t)
-                        ghostData.skidInfo[t] = i.getWheelSkidInfo(t)
+                        ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
+                        ghostData.wheelInfo.skidInfo[t] = i.getWheelSkidInfo(t)
                     }
                     ghostData = {
                         position: {
@@ -25102,14 +25100,16 @@ let alreadyEnded = false;
                         input: e.controls.getControls(ghostData.advancedCar.physics.currentFrame),
                         camera: e.cameraOrbit,
                         advancedCar: ghostData.advancedCar,
-                        contact: ghostData.contact,
-                        skidInfo: Object.assign({}, ghostData.skidInfo)
+                        wheelInfo: {
+                            contact: Object.assign({}, ghostData.wheelInfo.contact),
+                            skidInfo: Object.assign({}, ghostData.wheelInfo.skidInfo)
+                        }
                     }
                     console.log(ghostData)
-                    train.push(Object.assign({}, ghostData.skidInfo))
-                    if(ghostData.skidInfo[3] == 1) {
+                    train.push(ghostData)
+                    if(ghostData.wheelInfo.skidInfo[3] == 1) {
                     } else {
-                        console.log(JSON.stringify(ghostData.skidInfo)+" "+train.length)
+                        console.log(JSON.stringify(ghostData.wheelInfo.skidInfo)+" "+train.length)
                     }
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
                     alreadyEnded = true // stop the loop
