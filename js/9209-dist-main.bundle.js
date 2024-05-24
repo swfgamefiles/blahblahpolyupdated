@@ -25136,7 +25136,7 @@ function deepClone(obj, hash = new WeakMap()) {
                         advancedCar: ghostData.advancedCar,
                         wheelInfo: {
                             contact: [...ghostData.wheelInfo.contact],
-                            skidInfo: [...ghostData.wheelInfo.contact]
+                            skidInfo: [...ghostData.wheelInfo.skidInfo]
                         }
                     }
                     console.log(deepClone(ghostData))
