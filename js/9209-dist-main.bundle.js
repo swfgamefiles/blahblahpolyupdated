@@ -25103,10 +25103,10 @@ let alreadyEnded = false;
                         camera: e.cameraOrbit,
                         advancedCar: ghostData.advancedCar,
                         contact: ghostData.contact,
-                        skidInfo: [...ghostData.skidInfo]
+                        skidInfo: Object.assign({}, ghostData.skidInfo)
                     }
                     console.log(ghostData)
-                    train.push([...ghostData.skidInfo])
+                    train.push(Object.assign({}, ghostData.skidInfo))
                     if(ghostData.skidInfo[3] == 1) {
                     } else {
                         console.log(JSON.stringify(ghostData.skidInfo)+" "+train.length)
