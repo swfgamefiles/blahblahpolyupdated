@@ -25085,6 +25085,36 @@ let alreadyEnded = false;
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
+                    function deepClone(obj) {
+                        if (obj === null || typeof obj !== 'object') {
+                            return obj;
+                        }
+                    
+                        if (obj instanceof Date) {
+                            return new Date(obj);
+                        }
+                    
+                        if (obj instanceof Array) {
+                            const arrCopy = [];
+                            obj.forEach((item, index) => {
+                                arrCopy[index] = deepClone(item);
+                            });
+                            return arrCopy;
+                        }
+                    
+                        if (obj instanceof Object) {
+                            const objCopy = {};
+                            Object.keys(obj).forEach(key => {
+                                if (typeof obj[key] !== 'function') {
+                                    objCopy[key] = deepClone(obj[key]);
+                                }
+                            });
+                            return objCopy;
+                        }
+                    
+                        throw new Error("Unable to copy object! Its type isn't supported.");
+                    }
+                    
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
@@ -25105,7 +25135,7 @@ let alreadyEnded = false;
                             skidInfo: Object.assign({}, ghostData.wheelInfo.skidInfo)
                         }
                     }
-                    console.log(structuredClone(ghostData))
+                    console.log(deepClone(ghostData))
                     train.push(Object.assign({}, ghostData))
                     if(ghostData.wheelInfo.skidInfo[3] == 1) {
                     } else {
