@@ -25109,7 +25109,7 @@ let alreadyEnded = false;
                     train.push(ghostData.skidInfo)
                     if(ghostData.skidInfo[3] == 1) {
                     } else {
-                        console.log(JSON.stringify(ghostData.contact)+" "+train.length)
+                        console.log(JSON.stringify(ghostData.skidInfo)+" "+train.length)
                     }
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
                     alreadyEnded = true // stop the loop
