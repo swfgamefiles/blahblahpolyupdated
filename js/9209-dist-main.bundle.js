@@ -25106,7 +25106,7 @@ let alreadyEnded = false;
                         }
                     }
                     console.log(ghostData)
-                    train.push(ghostData.wheelInfo.skidInfo)
+                    train.push(ghostData)
                     if(ghostData.wheelInfo.skidInfo[3] == 1) {
                         console.log("SkidInfo has not changed.")
                     } else {
