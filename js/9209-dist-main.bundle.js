@@ -25106,7 +25106,7 @@ let alreadyEnded = false;
                         }
                     }
                     console.log(ghostData)
-                    train.push(Object.assign({}, ghostData.wheelInfo.skidInfo))
+                    train.push(Object.assign({}, ghostData))
                     if(ghostData.wheelInfo.skidInfo[3] == 1) {
                     } else {
                         console.log(JSON.stringify(ghostData.wheelInfo.skidInfo)+" "+train.length)
