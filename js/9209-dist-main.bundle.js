@@ -25146,7 +25146,6 @@ function deepClone(obj, hash = new WeakMap()) {
                             skidInfo: [...ghostData.wheelInfo.skidInfo]
                         }
                     }
-                    console.log(deepClone(ghostData))
                     const clonedGhostData = deepClone(ghostData); // Clone ghostData
                     train.push(clonedGhostData);
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
