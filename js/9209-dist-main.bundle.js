@@ -10221,16 +10221,16 @@ function deepClone(obj, hash = new WeakMap()) {
                                     .invert(), a.viewport.set(s.x, s.y, s.width, s.height), 0 === n && (b.matrix.copy(a.matrix), b.matrix.decompose(b.position, b.quaternion, b.scale)), !0 === i && b.cameras.push(a)
                             }
                         }
-                        for (let e = 0; e < v.length; e++) {
-                            const t = w[e],
-                                i = v[e];
-                            null !== t && void 0 !== i && i.update(t, n, l || s)
-                        }
-                        O && O(t, n), n.detectedPlanes && i.dispatchEvent({
-                            type: "planesdetected",
-                            data: n
-                        }), f = null
                     }
+                    for (let e = 0; e < v.length; e++) {
+                        const t = w[e],
+                            i = v[e];
+                        null !== t && void 0 !== i && i.update(t, n, l || s)
+                    }
+                    O && O(t, n), n.detectedPlanes && i.dispatchEvent({
+                        type: "planesdetected",
+                        data: n
+                    }), f = null
                 })), this.setAnimationLoop = function (e) {
                     O = e
                 }, this.dispose = function () { }
