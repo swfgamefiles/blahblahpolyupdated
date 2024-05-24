@@ -25105,7 +25105,7 @@ let alreadyEnded = false;
                             skidInfo: Object.assign({}, ghostData.wheelInfo.skidInfo)
                         }
                     }
-                    console.log(ghostData)
+                    console.log(structuredClone(ghostData))
                     train.push(Object.assign({}, ghostData))
                     if(ghostData.wheelInfo.skidInfo[3] == 1) {
                     } else {
