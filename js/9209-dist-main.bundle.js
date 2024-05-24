@@ -25139,8 +25139,8 @@ function deepClone(obj, hash = new WeakMap()) {
                             skidInfo: [...ghostData.wheelInfo.contact]
                         }
                     }
+                    console.log(deepClone(ghostData))
                     const clonedGhostData = deepClone(ghostData); // Clone ghostData
-                    console.log(clonedGhostData);
                     train.push(clonedGhostData);
                 } else if (e.hasStarted() && e.hasFinished() && alreadyEnded == false) {
                     alreadyEnded = true // stop the loop
