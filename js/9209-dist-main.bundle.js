@@ -25086,41 +25086,13 @@ let alreadyEnded = false;
                 const e = XM(this, NM, "f")
                 if (e.hasStarted() && e.hasFinished() == false) {
                     function deepClone(obj, hash = new WeakMap()) {
-                        if (obj === null || typeof obj !== 'object') {
-                            return obj;
-                        }
-                    
-                        if (hash.has(obj)) {
-                            return hash.get(obj);
-                        }
-                    
-                        if (obj instanceof Date) {
-                            return new Date(obj);
-                        }
-                    
-                        if (obj instanceof Array) {
-                            const arrCopy = [];
-                            hash.set(obj, arrCopy);
-                            obj.forEach((item, index) => {
-                                arrCopy[index] = deepClone(item, hash);
-                            });
-                            return arrCopy;
-                        }
-                    
-                        if (obj instanceof Object) {
-                            const objCopy = {};
-                            hash.set(obj, objCopy);
-                            Object.keys(obj).forEach(key => {
-                                if (typeof obj[key] !== 'function') {
-                                    objCopy[key] = deepClone(obj[key], hash);
-                                }
-                            });
-                            return objCopy;
-                        }
-                    
-                        throw new Error("Unable to copy object! Its type isn't supported.");
+                        if (Object(obj) !== obj || obj instanceof Function) return obj; // Return non-objects or functions as is
+                        if (hash.has(obj)) return hash.get(obj); // Return cached copy for circular references
+                        let result = obj instanceof Array ? [] : obj instanceof Date ? new Date(obj) : obj.constructor ? new obj.constructor() : Object.create(null);
+                        hash.set(obj, result); // Cache the copy
+                        return Object.assign(result, ...Object.keys(obj).map(key => ({ [key]: deepClone(obj[key], hash) })));
                     }
-
+                    
                     for (let t = 0; t < 4; t++) {
                         const i = ghostData.advancedCar
                         ghostData.wheelInfo.contact[t] = i.getWheelInContact(t)
