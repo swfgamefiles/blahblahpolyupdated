@@ -19836,6 +19836,7 @@ function deepClone(obj) {
                 function isOdd(number) {
                     return number % 2 !== 0;
                 }
+                console.log(Ug(this,tg,"f"))
                 if (isOdd(posSyncIndex) !== 1) { // index is even? => ghost car
                     let ghostCar = Ug(this, tg, "f")
                     ghostData.advancedCar = ghostCar
