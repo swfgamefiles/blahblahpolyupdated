@@ -19840,9 +19840,8 @@ function deepClone(obj) {
                     let ghostCar = Ug(this, tg, "f")
                     ghostData.advancedCar = ghostCar
                 } else {
-                    console.log("Normal car")
                     let car = Ug(this,tg,"f")
-                    console.log(car)
+                    console.log(car.getSpeedKmh)
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
