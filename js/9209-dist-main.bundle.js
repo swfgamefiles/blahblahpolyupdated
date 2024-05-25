@@ -35,15 +35,11 @@ function deepClone(obj, hash = new WeakMap()) {
     }
     hash.set(obj, result); // Cache result before recursion
 
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            const desc = Object.getOwnPropertyDescriptor(obj, key);
-            if (desc && desc.writable) {
-                result[key] = deepClone(obj[key], hash);
-            } else {
-                Object.defineProperty(result, key, desc);
-            }
-        }
+    const keys = Object.keys(obj); // Pre-compute keys
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        const value = obj[key]; // Direct object access
+        result[key] = deepClone(value, hash);
     }
     return result;
 };
