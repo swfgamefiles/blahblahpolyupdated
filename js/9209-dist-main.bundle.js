@@ -14,16 +14,26 @@ let ghostData = {
 let train = [];
 let alreadyEnded = false;
 let gatheringGhostData = false;
-function deepClone(obj) {
-    if (typeof obj !== 'object' || obj === null) {
-      return obj; // Handle primitives and null
-    }
+function deepClone(obj, hash = new WeakMap()) {
+    if (Object(obj) !== obj) return obj; // primitive
+    if (hash.has(obj)) return hash.get(obj); // already cloned
+  
+    let result;
     if (Array.isArray(obj)) {
-      return obj.map(deepClone); // Clone array elements
+      result = [];
+    } else {
+      result = {};
     }
-    return Object.assign({}, ...Object.keys(obj).map(key => ({
-      [key]: deepClone(obj[key])
-    })));
+  
+    hash.set(obj, result);
+  
+    for (let key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        result[key] = deepClone(obj[key], hash);
+      }
+    }
+  
+    return result;
   };
 (() => {
     var e = {
