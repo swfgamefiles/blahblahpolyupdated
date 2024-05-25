@@ -14,35 +14,17 @@ let ghostData = {
 let train = [];
 let alreadyEnded = false;
 let gatheringGhostData = false;
-// Define deepClone function outside the loop
-function deepClone(obj, hash = new WeakMap()) {
-    if (Object(obj) !== obj || obj instanceof Function) return obj; // Return primitive values and functions as is
-    if (hash.has(obj)) return hash.get(obj); // Handle circular references
-
-    let result;
-    if (obj instanceof Array) {
-        result = [];
-    } else if (obj instanceof Date) {
-        result = new Date(obj);
-    } else if (obj instanceof Map) {
-        result = new Map(Array.from(obj, ([key, val]) => [deepClone(key, hash), deepClone(val, hash)]));
-    } else if (obj instanceof Set) {
-        result = new Set(Array.from(obj, val => deepClone(val, hash)));
-    } else if (obj instanceof Object) {
-        result = Object.create(Object.getPrototypeOf(obj));
-    } else {
-        return obj; // Handle other types (e.g., Symbol, Buffer)
+function deepClone(obj) {
+    if (typeof obj !== 'object' || obj === null) {
+      return obj; // Handle primitives and null
     }
-    hash.set(obj, result); // Cache result before recursion
-
-    const keys = Object.keys(obj); // Pre-compute keys
-    for (let i = 0; i < keys.length; i++) {
-        const key = keys[i];
-        const value = obj[key]; // Direct object access
-        result[key] = deepClone(value, hash);
+    if (Array.isArray(obj)) {
+      return obj.map(deepClone); // Clone array elements
     }
-    return result;
-};
+    return Object.assign({}, ...Object.keys(obj).map(key => ({
+      [key]: deepClone(obj[key])
+    })));
+  };
 (() => {
     var e = {
         23: (e, t, i) => {
