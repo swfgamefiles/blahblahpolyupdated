@@ -14,26 +14,8 @@ let ghostData = {
 let train = [];
 let alreadyEnded = false;
 let gatheringGhostData = false;
-function deepClone(obj, hash = new WeakMap()) {
-    if (Object(obj) !== obj) return obj; // primitive
-    if (hash.has(obj)) return hash.get(obj); // already cloned
-  
-    let result;
-    if (Array.isArray(obj)) {
-      result = [];
-    } else {
-      result = {};
-    }
-  
-    hash.set(obj, result);
-  
-    for (let key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        result[key] = deepClone(obj[key], hash);
-      }
-    }
-  
-    return result;
+function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
   };
 (() => {
     var e = {
