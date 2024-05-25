@@ -4978,15 +4978,11 @@ function deepClone(obj) {
                 n = null;
 
             function r(t, s) {
-                if (!gatheringGhostData) {
-                    i(t, s), n = e.requestAnimationFrame(r)
-                }
+                i(t, s), n = e.requestAnimationFrame(r)
             }
             return {
                 start: function () {
-                    if (!gatheringGhostData) {
-                        !0 !== t && null !== i && (n = e.requestAnimationFrame(r), t = !0)
-                    }
+                    !0 !== t && null !== i && (n = e.requestAnimationFrame(r), t = !0)
                 },
                 stop: function () {
                     e.cancelAnimationFrame(n), t = !1
