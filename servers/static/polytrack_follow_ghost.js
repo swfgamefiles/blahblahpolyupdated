@@ -25180,6 +25180,11 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                 if (ghostCar.hasStarted() && ghostCar.hasFinished() == false) {
                     ghostInputs = ghostCar.controls.getControls(detailedGhostCar.physics.currentFrame)
                     console.log(ghostInputs)
+                    setArrowHighlight(arrowControl.upArrow, ghostInputs.up);
+                    setArrowHighlight(arrowControl.leftArrow, ghostInputs.left);
+                    setArrowHighlight(arrowControl.downArrow, ghostInputs.down);
+                    setArrowHighlight(arrowControl.rightArrow, ghostInputs.right);
+                    
                     showHideArrowControl(arrowControl, true); // Show the buttons
                 } else {
                     showHideArrowControl(arrowControl, false); // Hide the buttons
