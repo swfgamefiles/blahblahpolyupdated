@@ -1,6 +1,7 @@
 var carSpeed = 0;
 let posSyncIndex = 0;
-let ghostPos;
+let detailedGhostCar;
+let ghostInputs = {}
 function createArrowControl(container) {
     const controlDiv = document.createElement('div');
     controlDiv.style.position = 'absolute';
@@ -10228,7 +10229,7 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                                 f = a * d,
                                 p = n / (-h + d),
                                 m = p * -h; // HERE CAM CODE
-                            t.matrixWorld.decompose(ghostPos, e.quaternion, e.scale), e.translateX(m), e.translateZ(p), e.matrixWorld.compose(ghostPos, e.quaternion, e.scale), e.matrixWorldInverse.copy(e.matrixWorld)
+                            t.matrixWorld.decompose(0, e.quaternion, e.scale), e.translateX(m), e.translateZ(p), e.matrixWorld.compose(0, e.quaternion, e.scale), e.matrixWorldInverse.copy(e.matrixWorld)
                                 .invert();
                             const g = a + p,
                                 v = o + p,
@@ -18190,9 +18191,6 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                     if (e.controls.up == t.up && e.controls.right == t.right && e.controls.down == t.down && e.controls.left == t.left)
                         return
                 }
-                if (isOdd(posSyncIndex) !== 1) { // index is even? => ghost car
-                    console.log(Ff(this, Df, "f"))
-                }
                 Ff(this, Df, "f")
                     .push({
                         frame: e,
@@ -19919,17 +19917,13 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                     return number % 2 !== 0;
                 }
                 if (isOdd(posSyncIndex) !== 1) { // index is even?
-                    ghostPos = e
-                    const detailedGhostCar = Ug(this, tg, "f");
+                    detailedGhostCar = Ug(this, tg, "f");
 
-function ghostFinish() {
-    const frame = detailedGhostCar.physics.currentFrame;
-    console.log("TAS-- Ghost finished at: " + frame / 1000 + " seconds.");
-}
-
-// Pass the function reference without invoking it
-detailedGhostCar.addFinishCallback(ghostFinish);
-
+                    function ghostFinish() {
+                        const frame = detailedGhostCar.physics.currentFrame;
+                        console.log("TAS-- Ghost finished at: " + frame / 1000 + " seconds.");
+                    }
+                    detailedGhostCar.addFinishCallback(ghostFinish);
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
@@ -25182,6 +25176,9 @@ detailedGhostCar.addFinishCallback(ghostFinish);
             }
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
+                const ghostCar = XM(this, NM, "f")
+                ghostInputs = ghostCar.controls.getControls(detailedGhostCar.physics.currentFrame)
+                console.log(ghostInputs)
                 const e = XM(this, NM, "f")
                     .getPosition()
                     .distanceTo(XM(this, LM, "f")
