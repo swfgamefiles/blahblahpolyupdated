@@ -27321,8 +27321,9 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                 return t
             }
             getAllParts() {
-            const thi
-                console.log()
+                const parts =  Array.from(_C(this, vC, "f")
+                .values())
+                console.log(parts)
                 return Array.from(_C(this, vC, "f")
                     .values())
             }
