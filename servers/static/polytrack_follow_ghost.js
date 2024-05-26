@@ -10101,10 +10101,8 @@ let simulationSpeed = 2;
                         .invert()
                 }
                 this.updateCamera = function (e) {
-                    console.log(e)
                     if (null === n)
                         return;
-                    console.log(e)
                     b.near = _.near = y.near = e.near, b.far = _.far = y.far = e.far, E === b.near && S === b.far || (n.updateRenderState({
                         depthNear: b.near,
                         depthFar: b.far
@@ -18091,7 +18089,6 @@ let simulationSpeed = 2;
                     if (e.controls.up == t.up && e.controls.right == t.right && e.controls.down == t.down && e.controls.left == t.left)
                         return
                 }
-                console.log(Ff(this, Df, "f"))
                 Ff(this, Df, "f")
                     .push({
                         frame: e,
@@ -19078,8 +19075,8 @@ let simulationSpeed = 2;
                     .subVectors(e, om(this, rm, "f"));
                 a.normalize();
                 const o = 5.5;
-                let val = om(this, nm, "f")
-                .position.x
+                //let val = om(this, nm, "f")
+                //.position.x
                 // console.log(val) CAMERA POSITION
                 om(this, nm, "f")
                     .position.x = e.x - a.x * o + 2 * om(this, sm, "f")
@@ -19672,10 +19669,9 @@ let simulationSpeed = 2;
                     .camera
             }
             get cameraCockpit() {
-                let val = Ug(this, eg, "f")
+                const val = Ug(this, eg, "f")
                 .camera
-                console.log(`Camera cockpit value${val}`)
-       
+                //console.log(`Camera cockpit value${val}`)
                 return val
             }
             set audioVolume(e) {
@@ -21667,7 +21663,6 @@ let simulationSpeed = 2;
                             const n = c.domElement;
                             if (c.object.isPerspectiveCamera) {
                                 const r = c.object.position;
-                                console.log(r)
                                 e.copy(r)
                                     .sub(c.target);
                                 let s = e.length();
@@ -25062,7 +25057,6 @@ let simulationSpeed = 2;
                         .getRecord(i);
                     null != n && (e = n.recording, t = n.time)
                 }
-                console.log(e)
                 jM(this, UM, {
                     recording: e,
                     carColors: XM(this, UM, "f")
@@ -25073,10 +25067,6 @@ let simulationSpeed = 2;
                 }, "f")
             }
         }, VM = function () {
-            if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
-                const e = XM(this, NM, "f")
-                console.log(e.getPosition())
-            }
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const e = XM(this, NM, "f")
                     .getPosition()
@@ -25317,17 +25307,6 @@ let simulationSpeed = 2;
                     .setAnimationLoop(e)
             }
             get scene() {
-                console.log(rS(this, QM, "f"))
-                let list = rS(this, QM, "f").children
-                let children = []
-                for (let index = 0; index < list.length; index++) {
-                    let obj = {
-                        "children": list[index].children || [],
-                        "UUID": list[index].uuid
-                    }
-                    children.push(obj)
-                }
-                console.log(children)
                 return rS(this, QM, "f")
             }
         };
@@ -26754,7 +26733,6 @@ let simulationSpeed = 2;
             var i;
             const n = (null !== (i = nC(this, $A, "f")
                 .get(e)) && void 0 !== i ? i : 0) + 1;
-            console.log(getRecording(t))
             return nC(this, $A, "f")
                 .set(e, n), nC(this, JA, "f")
                 .getRecording(t)
@@ -27420,7 +27398,6 @@ let simulationSpeed = 2;
             }
             saveRecord(e, t, i, n) {
                 try {
-                    console.log(n)
                     localStorage.setItem(zC(BC, kC, "f", NC) + e, JSON.stringify({
                         uploadId: t,
                         frames: i.numberOfFrames.toString(),
@@ -27947,7 +27924,6 @@ let simulationSpeed = 2;
                                 if ("string" != typeof t.carColors)
                                     return void i("JSON carColors field has incorrect type");
                                 const l = ch.deserialize(t.carColors);
-                                console.log(r)
                                 e({
                                     recording: r,
                                     time: o,
