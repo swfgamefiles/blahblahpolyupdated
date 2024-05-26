@@ -19814,12 +19814,16 @@ let ghostPos;
                 }
                 if (isOdd(posSyncIndex) !== 1) { // index is even?
                     ghostPos = e
-                    const detailedGhostCar = Ug(this, tg, "f")
-                    function ghostfinish() {
-                        const frame = Ug(this, tg, "f").physics.currentFrame
-                        console.log("TAS-- Ghost finished at: "+frame/1000+" seconds.")
-                    }
-                    detailedGhostCar.addFinishCallback(ghostFinish())
+                    const detailedGhostCar = Ug(this, tg, "f");
+
+function ghostFinish() {
+    const frame = detailedGhostCar.physics.currentFrame;
+    console.log("TAS-- Ghost finished at: " + frame / 1000 + " seconds.");
+}
+
+// Pass the function reference without invoking it
+detailedGhostCar.addFinishCallback(ghostFinish);
+
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
