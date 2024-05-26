@@ -25177,7 +25177,7 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const ghostCar = XM(this, NM, "f")
-                if (e.hasStarted() && e.hasFinished() == false) {
+                if (ghostCar.hasStarted() && ghostCar.hasFinished() == false) {
                     ghostInputs = ghostCar.controls.getControls(detailedGhostCar.physics.currentFrame)
                     console.log(ghostInputs)
                     showHideArrowControl(arrowControl, true); // Show the buttons
