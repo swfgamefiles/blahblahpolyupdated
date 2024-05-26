@@ -25177,8 +25177,13 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
         }, VM = function () {
             if (null != XM(this, NM, "f") && null != XM(this, LM, "f")) {
                 const ghostCar = XM(this, NM, "f")
-                ghostInputs = ghostCar.controls.getControls(detailedGhostCar.physics.currentFrame)
-                console.log(ghostInputs)
+                if (e.hasStarted() && e.hasFinished() == false) {
+                    ghostInputs = ghostCar.controls.getControls(detailedGhostCar.physics.currentFrame)
+                    console.log(ghostInputs)
+                    showHideArrowControl(arrowControl, true); // Show the buttons
+                } else {
+                    showHideArrowControl(arrowControl, false); // Hide the buttons
+                }
                 const e = XM(this, NM, "f")
                     .getPosition()
                     .distanceTo(XM(this, LM, "f")
