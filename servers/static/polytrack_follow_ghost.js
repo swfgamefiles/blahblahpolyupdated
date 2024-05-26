@@ -25184,7 +25184,7 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                     setArrowHighlight(arrowControl.leftArrow, ghostInputs.left);
                     setArrowHighlight(arrowControl.downArrow, ghostInputs.down);
                     setArrowHighlight(arrowControl.rightArrow, ghostInputs.right);
-                    
+
                     showHideArrowControl(arrowControl, true); // Show the buttons
                 } else {
                     showHideArrowControl(arrowControl, false); // Hide the buttons
@@ -25250,7 +25250,7 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                                     .setCamera(XM(this, NM, "f")
                                         .cameraOrbit) : XM(this, bM, "f")
                                     .setCamera(XM(this, NM, "f")
-                                        .cameraCockpit)) : "Escape" == e.code && f()), c.checkKeyBinding(e, ry.ToggleSpectatorCamera) && null != XM(this, NM, "f") && (XM(this, zM, "f")
+                                        .cameraCockpit)) : "Escape" == e.code && f()), c.checkKeyBinding(e, ry.ToggleSpectatorCamera) && null != XM(this, LM, "f") && (XM(this, zM, "f")
                                 .camera.position.copy(XM(this, bM, "f")
                                     .camera.position), XM(this, zM, "f")
                                 .camera.quaternion.copy(XM(this, bM, "f")
