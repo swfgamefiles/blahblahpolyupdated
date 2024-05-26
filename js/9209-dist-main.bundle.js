@@ -18999,6 +18999,10 @@ function deepClone(obj) {
                 return new Ve(t.x(), t.y(), t.z(), t.w())
             }
             getWheelInContact(e) {
+                const rayCast =  $p(this, Pp, "f")
+                .getWheelInfo(e)
+                .m_raycastInfo
+                console.log(rayCast)
                 return $p(this, Pp, "f")
                     .getWheelInfo(e)
                     .m_raycastInfo.m_isInContact
