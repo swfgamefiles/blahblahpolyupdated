@@ -19819,7 +19819,7 @@ let ghostPos;
                         const frame = Ug(this, tg, "f").physics.currentFrame
                         console.log("TAS-- Ghost finished at: "+frame/1000+" seconds.")
                     }
-                    detailedGhostCar.addFinishCallback(ghostFinish)
+                    detailedGhostCar.addFinishCallback(ghostFinish())
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
