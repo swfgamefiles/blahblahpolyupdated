@@ -25249,7 +25249,7 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                                         .cameraCockpit) : XM(this, bM, "f")
                                     .setCamera(XM(this, NM, "f")
                                         .cameraOrbit) : XM(this, bM, "f")
-                                    .setCamera(XM(this, NM, "f")
+                                    .setCamera(XM(this, LM, "f")
                                         .cameraCockpit)) : "Escape" == e.code && f()), c.checkKeyBinding(e, ry.ToggleSpectatorCamera) && null != XM(this, LM, "f") && (XM(this, zM, "f")
                                 .camera.position.copy(XM(this, bM, "f")
                                     .camera.position), XM(this, zM, "f")
