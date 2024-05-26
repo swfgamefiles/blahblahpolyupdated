@@ -25267,6 +25267,7 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                     }), "f"))
             }
             dispose() {
+                showHideArrowControl(arrowControl, false); // Hide the buttons
                 var e, t, i;
                 XM(this, AM, "f")
                     .setCursorHiddenWhenInactive(!1), XM(this, xM, "f")
