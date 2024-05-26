@@ -18087,6 +18087,7 @@ let ghostPos;
                     if (e.controls.up == t.up && e.controls.right == t.right && e.controls.down == t.down && e.controls.left == t.left)
                         return
                 }
+                console.log(Ff(this, Df, "f"))
                 Ff(this, Df, "f")
                     .push({
                         frame: e,
