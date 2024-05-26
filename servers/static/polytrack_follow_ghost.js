@@ -25279,6 +25279,7 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                     .clearMountains(), null === (t = XM(this, LM, "f")) || void 0 === t || t.dispose(), null === (i = XM(this, NM, "f")) || void 0 === i || i.dispose(), XM(this, SM, "f")
                     .removeRecordEventListener(XM(this, DM, "f")), window.removeEventListener("keydown", XM(this, OM, "f")), window.removeEventListener("keyup", XM(this, FM, "f")), XM(this, zM, "f")
                     .dispose()
+                showHideArrowControl(arrowControl, false); // Hide the buttons
             }
             update(e) {
                 var t, i, n, r;
