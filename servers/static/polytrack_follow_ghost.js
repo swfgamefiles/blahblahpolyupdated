@@ -1,8 +1,6 @@
 var carSpeed = 0;
-let color = 0;
 let posSyncIndex = 0;
 let ghostPos;
-let simulationSpeed = 2;
 (() => {
     var e = {
             23: (e, t, i) => {
@@ -19816,6 +19814,12 @@ let simulationSpeed = 2;
                 }
                 if (isOdd(posSyncIndex) !== 1) { // index is even?
                     ghostPos = e
+                    const detailedGhostCar = Ug(this, tg, "f")
+                    function ghostfinish() {
+                        const frame = Ug(this, tg, "f").physics.currentFrame
+                        console.log("TAS-- Ghost finished at: "+frame/1000+" seconds.")
+                    }
+                    detailedGhostCar.addFinishCallback(ghostFinish)
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
