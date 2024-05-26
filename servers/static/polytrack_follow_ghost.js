@@ -1,6 +1,109 @@
 var carSpeed = 0;
 let posSyncIndex = 0;
 let ghostPos;
+function createArrowControl(container) {
+    const controlDiv = document.createElement('div');
+    controlDiv.style.position = 'absolute';
+    controlDiv.style.bottom = '0';
+    controlDiv.style.left = '0';
+    controlDiv.style.opacity = '0.7';
+    controlDiv.style.display = 'flex';
+    controlDiv.style.flexDirection = 'column';
+    controlDiv.style.gap = '10px';
+    controlDiv.style.padding = '10px';
+    controlDiv.style.alignItems = 'center';
+  
+    const upArrow = document.createElement('div');
+    upArrow.style.backgroundColor = 'green';
+    upArrow.style.width = '50px';
+    upArrow.style.height = '50px';
+    upArrow.style.display = 'flex';
+    upArrow.style.alignItems = 'center';
+    upArrow.style.justifyContent = 'center';
+    upArrow.style.fontSize = '24px';
+    upArrow.textContent = '⬆️';
+  
+    const horizontalContainer = document.createElement('div');
+    horizontalContainer.style.display = 'flex';
+    horizontalContainer.style.flexDirection = 'row';
+    horizontalContainer.style.gap = '10px';
+    horizontalContainer.style.justifyContent = 'center';
+  
+    const leftArrow = document.createElement('div');
+    leftArrow.style.backgroundColor = 'gray';
+    leftArrow.style.width = '50px';
+    leftArrow.style.height = '50px';
+    leftArrow.style.display = 'flex';
+    leftArrow.style.alignItems = 'center';
+    leftArrow.style.justifyContent = 'center';
+    leftArrow.style.fontSize = '24px';
+    leftArrow.textContent = '⬅️';
+  
+    const downArrow = document.createElement('div');
+    downArrow.style.backgroundColor = 'gray';
+    downArrow.style.width = '50px';
+    downArrow.style.height = '50px';
+    downArrow.style.display = 'flex';
+    downArrow.style.alignItems = 'center';
+    downArrow.style.justifyContent = 'center';
+    downArrow.style.fontSize = '24px';
+    downArrow.textContent = '⬇️';
+  
+    const rightArrow = document.createElement('div');
+    rightArrow.style.backgroundColor = 'gray';
+    rightArrow.style.width = '50px';
+    rightArrow.style.height = '50px';
+    rightArrow.style.display = 'flex';
+    rightArrow.style.alignItems = 'center';
+    rightArrow.style.justifyContent = 'center';
+    rightArrow.style.fontSize = '24px';
+    rightArrow.textContent = '➡️';
+  
+    horizontalContainer.appendChild(leftArrow);
+    horizontalContainer.appendChild(downArrow);
+    horizontalContainer.appendChild(rightArrow);
+  
+    controlDiv.appendChild(upArrow);
+    controlDiv.appendChild(horizontalContainer);
+  
+    container.appendChild(controlDiv);
+  
+    return {
+      controlDiv,
+      upArrow,
+      leftArrow,
+      downArrow,
+      rightArrow,
+    };
+  }
+  
+  function setArrowHighlight(arrow, highlighted) {
+    if (highlighted) {
+      arrow.style.backgroundColor = 'lightgreen';
+    } else {
+      arrow.style.backgroundColor = 'gray';
+    }
+  }
+  
+  function showHideArrowControl(control, show) {
+    if (show) {
+      control.controlDiv.style.display = 'flex';
+    } else {
+      control.controlDiv.style.display = 'none';
+    }
+  }
+  
+  const container = document.body; // Example: attaching to the body
+  const arrowControl = createArrowControl(container);
+  
+  // Example usage:
+  setArrowHighlight(arrowControl.upArrow, true);
+  setArrowHighlight(arrowControl.leftArrow, false);
+  setArrowHighlight(arrowControl.downArrow, false);
+  setArrowHighlight(arrowControl.rightArrow, false);
+  
+  //showHideArrowControl(arrowControl, true); // Show the buttons
+showHideArrowControl(arrowControl, false); // Hide the buttons
 (() => {
     var e = {
             23: (e, t, i) => {
