@@ -17,6 +17,8 @@ let gatheringGhostData = false;
 function deepClone(obj) {
     return JSON.parse(JSON.stringify(obj));
   };
+  let firstCar;
+  let nextCar;
 (() => {
     var e = {
         23: (e, t, i) => {
@@ -19845,10 +19847,8 @@ function deepClone(obj) {
                     ghostData.advancedCar = ghostCar
                     console.log(ghostCar.getSpeedKmh())
 
-                    let car = XM(this, LM, "f")
-                    console.log(car.getSpeedKmh())
-                    let normalCar = jM(this, LM, new Og(XM(this, vM, "f")))
-                    console.log(normalCar.getSpeedKmh())
+                    console.log(firstCar.getSpeedKmh())
+                    console.log(nextCar.getSpeedKmh())
                 //}
                 posSyncIndex++
                 Ug(this, Jm, "f")
@@ -25031,6 +25031,8 @@ function deepClone(obj) {
             };
         vM = new WeakMap, wM = new WeakMap, yM = new WeakMap, _M = new WeakMap, xM = new WeakMap, bM = new WeakMap, EM = new WeakMap, MM = new WeakMap, SM = new WeakMap, TM = new WeakMap, AM = new WeakMap, CM = new WeakMap, kM = new WeakMap, RM = new WeakMap, PM = new WeakMap, LM = new WeakMap, IM = new WeakMap, NM = new WeakMap, UM = new WeakMap, DM = new WeakMap, OM = new WeakMap, FM = new WeakMap, zM = new WeakMap, gM = new WeakSet, BM = function (e) {
             var t;
+            firstCar = XM(this, LM, "f")
+            nextCar = jM(this, LM, new Og(XM(this, vM, "f")))
             null != XM(this, LM, "f") && ((null == XM(this, UM, "f") || XM(this, UM, "f")
                 .isSelf) && XM(this, LM, "f")
                     .hasFinished() && (null == XM(this, RM, "f")
