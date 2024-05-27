@@ -19846,6 +19846,7 @@ function deepClone(obj) {
                 } else {
                     let car = Ug(this,tg,"f")
                     console.log(car.getWheelRotation())
+                    console.log(car.getSpeedKmh())
                 }
                 posSyncIndex++
                 Ug(this, Jm, "f")
