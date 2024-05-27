@@ -19840,13 +19840,16 @@ function deepClone(obj) {
                 function isOdd(number) {
                     return number % 2 !== 0;
                 }
-                if (isOdd(posSyncIndex) === false) { // index is even? => ghost car
+                //if (isOdd(posSyncIndex) === false) { // index is even? => ghost car
                     let ghostCar = Ug(this, tg, "f")
                     ghostData.advancedCar = ghostCar
-                } else {
-                    let car = Ug(this,tg,"f")
+                    console.log(ghostCar.getSpeedKmh())
+
+                    let car = XM(this, LM, "f")
                     console.log(car.getSpeedKmh())
-                }
+                    let normalCar = jM(this, LM, new Og(XM(this, vM, "f")))
+                    console.log(normalCar.getSpeedKmh())
+                //}
                 posSyncIndex++
                 Ug(this, Jm, "f")
                     .positionX.value = e.x, Ug(this, Jm, "f")
