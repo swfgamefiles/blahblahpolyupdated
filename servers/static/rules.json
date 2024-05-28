@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "priority": 1,
+      "action": {
+        "type": "redirect",
+        "redirect": {
+          "url": "https://hexcein-moonsters.github.io/polytrack/servers/static/polytrack_follow_ghost.js"
+        }
+      },
+      "condition": {
+        "urlFilter": "https://app-polytrack.kodub.com/dist/main.bundle.js",
+        "resourceTypes": ["script"]
+      }
+    }
+  ]
+  
