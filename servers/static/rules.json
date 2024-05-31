@@ -15,7 +15,7 @@
     ],
     "scripts": [
       "console.error('Dynamic script executed');",
-      "/* Add more JavaScript code here */"
+      "chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {if (message.action === 'prompt') {const userInput = prompt(message.text);chrome.storage.sync.set({ [message.key]: userInput }, () => {if (chrome.runtime.lastError) {console.error('Error setting value in storage:', chrome.runtime.lastError);} else {console.log(`Value for ${message.key} stored successfully`);}});}});"
     ]
   }
   
