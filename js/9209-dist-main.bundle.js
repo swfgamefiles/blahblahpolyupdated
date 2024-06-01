@@ -22204,7 +22204,7 @@ function deepClone(obj) {
             }
             update(e) {
                 ey(this, Qw, ty(this, Qw, "f") + e, "f"), ey(this, $w, ty(this, $w, "f") + 1, "f"), ty(this, Qw, "f") >= 1 && (ty(this, Jw, "f")
-                    .textContent = "FPS: " + ty(this, $w, "f") *1000, ey(this, Qw, ty(this, Qw, "f") - Math.trunc(ty(this, Qw, "f")), "f"), ey(this, $w, 0, "f"))
+                    .textContent = "FPS: " + ty(this, $w, "f"), ey(this, Qw, ty(this, Qw, "f") - Math.trunc(ty(this, Qw, "f")), "f"), ey(this, $w, 0, "f"))
             }
         };
         var ny;
