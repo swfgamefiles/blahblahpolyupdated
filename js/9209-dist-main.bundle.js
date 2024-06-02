@@ -26512,7 +26512,7 @@ function deepClone(obj) {
                                     .className = "info", uA(this, XT, "f")
                                         .appendChild(uA(this, KT, "f"));
             const k = document.createElement("a");
-            k.href = "https://www.kodub.com", k.target = "_blank", k.textContent = "maleforge (<@1055835469520322614>). Memorial. - " + t.get("Version") + " " + fA, uA(this, KT, "f")
+            k.href = "https://www.kodub.com", k.target = "_blank", k.textContent = "maleforge (<@1055835469520322614>) Memorial. - " + t.get("Version") + " " + fA, uA(this, KT, "f")
                 .appendChild(k);
             const R = document.createElement("a");
             R.href = "https://opengameart.org/content/sci-fi-theme-1", R.target = "_blank", R.textContent = '"Sci-fi Theme" by Maou (CC-BY 4.0)', uA(this, KT, "f")
