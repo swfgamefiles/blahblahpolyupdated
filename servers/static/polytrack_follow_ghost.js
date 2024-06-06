@@ -18492,7 +18492,7 @@ showHideArrowControl(arrowControl, false); // Hide the buttons
                 .length; ++e)
                 hp(this, sp, "f")[e](1 / hp(this, rp, "f"));
             hp(this, qf, "f")
-                .stepSimulation(1 / hp(this, rp, "f") * 0.5, 0, 1 / hp(this, rp, "f")), cp(this, np, (e = hp(this, np, "f"), ++e), "f");
+                .stepSimulation(1 / hp(this, rp, "f"), 0, 1 / hp(this, rp, "f")), cp(this, np, (e = hp(this, np, "f"), ++e), "f");
             for (let e = 0; e < hp(this, ap, "f")
                 .length; ++e)
                 hp(this, ap, "f")[e](1 / hp(this, rp, "f"))
